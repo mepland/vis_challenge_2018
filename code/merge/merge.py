@@ -103,6 +103,10 @@ if debug:
     print "Number of unique students %d" % (len(df_comm.StudentIDFixed.unique()))
 
 
+print "Date min: %s" % (min(df_comm['Date']))
+print "Date max: %s" % (max(df_comm['Date']))
+
+
 # TODO now load faculty list
 
 
