@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # print "\nStarting up..."
 
-#import os
+import os
 import pandas as pd
 import itertools
 from datetime import datetime
@@ -40,12 +40,12 @@ def strfdelta(tdelta, fmt):
 # If it already exists don't crash, otherwise raise an exception
 # Adapted from A-B-B's response to http://stackoverflow.com/questions/273192/in-python-check-if-a-directory-exists-and-create-it-if-necessary
 # Note in python 3.4+ 'os.makedirs(output_path, exist_ok=True)' would handle all of this...
-#def make_path(path):
-#    try:
-#        os.makedirs(path)
-#    except OSError:
-#        if not os.path.isdir(path):
-#            raise Exception('Problem creating output dir %s !!!\nA file with the same name probably already exists, please fix the conflict and run again.' % output_path)
+def make_path(path):
+    try:
+        os.makedirs(path)
+    except OSError:
+        if not os.path.isdir(path):
+            raise Exception('Problem creating output dir %s !!!\nA file with the same name probably already exists, please fix the conflict and run again.' % output_path)
 # end def for make_path()
 
 ########################################################
@@ -320,13 +320,30 @@ if debug and False: # can't really fix these...
 # drop committee members who are not listed in faculty
 df_cm = df_cm.drop(df_cm[~df_cm.AdvisorDUID.isin(df_fac.DUID.unique())].index)
 
-################################################################################################################
-################################################################################################################
-# TODO Here we should use both dataframes to spit out a csv of edges with dates, and a look up table to take the AcadOrg to it's real name
-all_edge_rows_list = []
-for student in df_cm['StudentIDFixed'].unique():
-    df_cm_student = df_cm[(df_cm.StudentIDFixed == student)]
+########################################################
+# merge the two data frames
+df_cm_merged = pd.merge(df_cm, df_fac[['DUID', 'ORGANIZATIONAL_UNIT']].drop_duplicates(),
+how='left',
+left_on = 'AdvisorDUID',
+right_on = 'DUID',
+sort=False,
+suffixes=('_cm', '_fac')
+)
 
+# remove DUID since we already have AdvisorDUID
+del df_cm_merged['DUID']
+
+# remove advisors who are listed twice
+df_cm_merged = df_cm_merged.drop_duplicates(subset=['StudentIDFixed', 'AdvisorDUID'])
+
+################################################################################################################
+################################################################################################################
+# Create edges between ORGANIZATIONAL_UNITs from each committee
+all_edge_rows_list = []
+for student in df_cm_merged['StudentIDFixed'].unique():
+    df_cm_student = df_cm_merged[(df_cm_merged.StudentIDFixed == student)]
+
+    # get the date of the committee and do final checks on it's validity
     dates = df_cm_student.Date.unique()
     if len(dates) > 1:
         print "ERROR: Multiple Date in student = %s continuing!" % (student)
@@ -350,14 +367,11 @@ for student in df_cm['StudentIDFixed'].unique():
     # now we are happy with the validity of the committee
 
     # if we want to roll the committee up into a nice human readable row
-
     # 'Advisors' is a list of lists ['AdvisorDUID', 'AdvisorRole', 'AdvisorName']
     #advisors_list = []
-
     # loop through all the rows of this student's records to collect the advisors
     #for index, row in df_cm_student.iterrows():
     #    advisors_list.append([row['AdvisorDUID'], row['AdvisorRole'], row['AdvisorName']])
-
     #this_row = {
     #'StudentIDFixed': student,
     #'Date': dates[0],
@@ -368,24 +382,17 @@ for student in df_cm['StudentIDFixed'].unique():
     #}
     #all_comm_rows_list.append(this_row)
 
-    # save out all the edges we can make from the AdvisorDUIDs TODO join with df_fac, then use org number here instead!
+    # save out all the edges we can make from the AdvisorDUIDs
     # itertools.combinations does what we want, produces all combinations of 2 commitee members
-    edges = list(itertools.combinations(df_cm_student['AdvisorDUID'], 2))
+    edges = list(itertools.combinations(df_cm_student['ORGANIZATIONAL_UNIT'], 2))
 
-    print "For %s" % (student)
-    print df_cm_student['AdvisorDUID']
-    print edges
-
-# TODO finish writting tomorrow!
-
-#    this_row = {
-#    'Date': dates[0],
-#    'n1':
-#    'n2':
-#    }
-#    all_edge_rows_list.append(this_row)
-
-
+    for edge in edges:
+        this_row = {
+        'Date': dates[0],
+        'n1':edge[0],
+        'n2':edge[1]
+        }
+        all_edge_rows_list.append(this_row)
 
 # create df_edges
 df_edges = pd.DataFrame(all_edge_rows_list)
@@ -393,7 +400,7 @@ df_edges = pd.DataFrame(all_edge_rows_list)
 
 ########################################################
 # debugging code for cleaned df_edges
-if True or debug:
+if debug:
     print "df_edges N rows = %d" % (len(df_edges.index))
     print "df_edges columns are:"
     for y in df_edges.columns:
@@ -406,11 +413,15 @@ if True or debug:
 
 
 ########################################################
-# print "\nNow saving out to %s" % (output_path)
+print "\nNow saving out to %s" % (output_path)
+make_path(output_path)
+df_edges.to_csv(output_path+"edges.csv", index=False, na_rep='nan')
 
 if debug:
-    df_cm.to_csv(output_path+"final_df_cm.csv", index=False, na_rep='nan')
-    df_fac.to_csv(output_path+"final_df_fac.csv", index=False, na_rep='nan')
+    make_path(output_path+"debug_dfs/")
+    df_cm_merged.to_csv(output_path+"debug_dfs/df_cm_merged.csv", index=False, na_rep='nan')
+    df_cm.to_csv(output_path+"debug_dfs/df_cm.csv", index=False, na_rep='nan')
+    df_fac.to_csv(output_path+"debug_dfs/df_fac.csv", index=False, na_rep='nan')
 
 ########################################################
 print "\nFinished, exiting.\n"
