@@ -269,8 +269,7 @@ if debug and False: # when only selecting P appointments, all of them only have 
         print ""
 
 if debug:
-    print "Listing all org unit info"
-
+    print "Listing all org units by name"
     for school_name in df_fac.SCHOOL_NAME.unique():
         df_fac_school = df_fac[(df_fac.SCHOOL_NAME == school_name)]
 
@@ -289,8 +288,7 @@ if debug:
                 print "\nno org units at all!!\n%s | %s" % (school_name, org_dis_name)
 
 if debug:
-    print "Listing all org units"
-
+    print "Listing all org units by number"
     for org in df_fac.ORGANIZATIONAL_UNIT.unique():
         df_fac_org = df_fac[(df_fac.ORGANIZATIONAL_UNIT == org)]
 
@@ -315,6 +313,10 @@ if debug and False: # can't really fix these, don't have time to try to match by
         print df_cm_not_in_fac
     else:
         print "No missing faculty"
+
+########################################################
+# create lookup df to match ORGANIZATIONAL_UNIT to the human readable ORG_DISPLAY_NAME
+df_org_names = df_fac[['ORGANIZATIONAL_UNIT', 'SCHOOL_NAME', 'ORG_DISPLAY_NAME']].drop_duplicates().sort_values('ORGANIZATIONAL_UNIT')
 
 ########################################################
 # drop committee members who are not listed in faculty
@@ -400,6 +402,7 @@ if debug:
 print "\nNow saving out to %s" % (output_path)
 make_path(output_path)
 df_edges.to_csv(output_path+"edges.csv", index=False, na_rep='nan')
+df_org_names.to_csv(output_path+"org_names.csv", index=False, na_rep='nan')
 
 if debug:
     make_path(output_path+"debug_dfs/")
