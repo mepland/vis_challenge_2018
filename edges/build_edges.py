@@ -304,7 +304,7 @@ if debug:
         else:
             print "%d | %s | %s" % (org, school_names[0], org_dis_names[0])
 
-if debug and False: # can't really fix these...
+if debug and False: # can't really fix these, don't have time to try to match by name...
     print "Find committee members not in faculty list"
     df_cm_not_in_fac = df_cm[~df_cm.AdvisorDUID.isin(df_fac.DUID.unique())]
     df_cm_not_in_fac = df_cm_not_in_fac[['AcadOrg', 'AdvisorDUID', 'AdvisorName']].drop_duplicates()
@@ -365,22 +365,6 @@ for student in df_cm_merged['StudentIDFixed'].unique():
         continue
 
     # now we are happy with the validity of the committee
-
-    # if we want to roll the committee up into a nice human readable row
-    # 'Advisors' is a list of lists ['AdvisorDUID', 'AdvisorRole', 'AdvisorName']
-    #advisors_list = []
-    # loop through all the rows of this student's records to collect the advisors
-    #for index, row in df_cm_student.iterrows():
-    #    advisors_list.append([row['AdvisorDUID'], row['AdvisorRole'], row['AdvisorName']])
-    #this_row = {
-    #'StudentIDFixed': student,
-    #'Date': dates[0],
-    #'AcadProg':acadprogs[0],
-    #'AcadPlan':acadplans[0],
-    #'AcadOrg':acadorgs[0],
-    #'Advisors':advisors_list
-    #}
-    #all_comm_rows_list.append(this_row)
 
     # save out all the edges we can make from the AdvisorDUIDs
     # itertools.combinations does what we want, produces all combinations of 2 commitee members

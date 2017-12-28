@@ -7,7 +7,7 @@ Work for the [2018 Scholars@Duke Visualization Challenge](https://rc.duke.edu/sc
 ## Running
 ### 
 
-### Merging
+### Creating edges from original data
 ```bash
-python -u merge.py 2>&1 | tee last.log
+python -u build_edges.py 2>&1 | tee last.log
 ```
