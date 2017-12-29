@@ -5,10 +5,13 @@ matthew.epland@duke.edu
 Work for the [2018 Scholars@Duke Visualization Challenge](https://rc.duke.edu/scholars-vis-challenge-2018)  
 
 ## Prerequisites
-
-
-testing
+```bash
+pip install pandas
+pip install jupyter
+pip install matplotlib
+pip install networkx
 pip install visJS2jupyter
+```
 
 ## Running
 ### 
@@ -18,8 +21,8 @@ pip install visJS2jupyter
 python -u build_edges.py 2>&1 | tee last.log
 ```
 
-### Creating graph from edges
+### Creating graph from edges, and manipulating it
 ```bash
-python -u build_graph.py 2>&1 | tee last.log
+jupyter notebook graph.ipynb
 ```
 
