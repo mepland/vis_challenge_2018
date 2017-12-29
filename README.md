@@ -4,6 +4,12 @@ matthew.epland@duke.edu
 
 Work for the [2018 Scholars@Duke Visualization Challenge](https://rc.duke.edu/scholars-vis-challenge-2018)  
 
+## Prerequisites
+
+
+testing
+pip install visJS2jupyter
+
 ## Running
 ### 
 

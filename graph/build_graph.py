@@ -3,6 +3,8 @@
 
 import os
 import pandas as pd
+import networkx as nx
+import matplotlib.pyplot as plt
 from datetime import datetime
 start_all_time = datetime.now()
 
@@ -66,9 +68,53 @@ df_edges = pd.read_csv(edges_path, dtype={
 } , nrows=my_nrows)
 
 ########################################################
-# 
+# create the graph directly 
+# G = nx.from_pandas_dataframe(df_edges, 'n1', 'n2',create_using=nx.Graph())
+# G = nx.from_pandas_dataframe(df_edges, 'n1', 'n2', edge_attr=['Date'],create_using=nx.Graph())
 
-print df_edges.head(20)
+########################################################
+# build graph up explicitly edge by edge, can get the weights right this way
+G = nx.Graph()
+# default_weight = 1.0
+default_weight = 1.0 / float(len(df_edges.index))
+for index, row in df_edges.iterrows():
+    n1 = row['n1']
+    n2 = row['n2']
+    if G.has_edge(n1,n2):
+        G[n1][n2]['weight'] += default_weight
+    else:
+        G.add_edge(n1,n2, weight=default_weight)
+
+########################################################
+# scratch work below
+
+#Quick snapshot of the Network
+print nx.info(G)
+
+#Create network layout for visualizations
+spring_pos = nx.spring_layout(G)
+
+edges,weights = zip(*nx.get_edge_attributes(G,'weight').items())
+nx.draw(G, spring_pos, node_color='b', edgelist=edges, edge_color=weights, width=2.5, edge_cmap=plt.cm.Reds, with_labels = False, node_size = 30)
+plt.savefig('edges.png')
+
+# draw the graph
+fig = plt.figure('fig1')
+plt.axis("off")
+nx.draw_networkx(G, pos = spring_pos, with_labels = False, node_size = 30)
+# make_path(m_path)
+fig.savefig('G.png', dpi=120)
+
+
+'''
+import visJS2jupyter.visJS_module
+nodes = G.nodes()
+edges = G.edges()
+nodes_dict = [{"id":n} for n in nodes]
+node_map = dict(zip(nodes,range(len(nodes)))) # map to indices for source/target in edges
+edges_dict = [{"source":node_map[edges[i][0]], "target":node_map[edges[i][1]],"title":'test'} for i in range(len(edges))]
+visJS_module.visjs_network(nodes_dict, edges_dict, time_stamp=0)
+'''
 
 '''
 ########################################################
