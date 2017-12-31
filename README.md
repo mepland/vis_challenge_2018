@@ -8,6 +8,7 @@ Work for the [2018 Scholars@Duke Visualization Challenge](https://rc.duke.edu/sc
 ```bash
 pip install pandas
 pip install jupyter
+jupyter nbextension enable --py widgetsnbextension
 pip install matplotlib
 pip install networkx==1.11
 pip install visJS2jupyter
