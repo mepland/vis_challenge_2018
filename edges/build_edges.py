@@ -25,6 +25,13 @@ pd.set_option('display.max_rows', 200)
 pd.set_option('display.max_columns', 10)
 pd.set_option('display.width', 1000)
 
+if primary_only:
+    print "\nOnly considering primary appointments"
+    output_path += 'apt_primary/'
+else:
+    print "\nConsidering all non-admin appointments"
+    output_path += 'apt_all/'
+
 ################################################################################################################
 ################################################################################################################
 # Define functions
@@ -437,8 +444,8 @@ if debug:
 print "\nNow saving out to %s" % (output_path)
 make_path(output_path)
 
-tag = ''
-if not primary_only: tag = "_all_appointments"
+tag = "_all_appointments"
+if primary_only: tag = '_primary_appointments'
 
 df_edges.to_csv(output_path+"edges"+tag+".csv", index=False, na_rep='nan')
 df_org_names.to_csv(output_path+"org_names"+tag+".csv", index=False, na_rep='nan')

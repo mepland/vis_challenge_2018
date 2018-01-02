@@ -34,7 +34,6 @@ ORGANIZATIONAL_UNIT,SCHOOL_NAME,ORG_DISPLAY_NAME
 50000531,Trinity College of Arts & Sciences,Theater Studies
 50000532,Trinity College of Arts & Sciences,Sociology
 50000545,Trinity College of Arts & Sciences,Education
-50000551,Trinity College of Arts & Sciences,Institute for Decision and Statistical Science
 50000554,Trinity College of Arts & Sciences,Literature
 50000562,Trinity College of Arts & Sciences,"Gender, Sexuality & Feminist Studies"
 50000758,School of Nursing,School of Nursing
@@ -47,37 +46,26 @@ ORGANIZATIONAL_UNIT,SCHOOL_NAME,ORG_DISPLAY_NAME
 50000820,School of Medicine,Molecular Genetics and Microbiology
 50000830,School of Medicine,Biostatistics & Bioinformatics
 50000832,School of Medicine,Community and Family Medicine
-50000847,School of Medicine,"Medicine, Cardiology"
+50000847,School of Medicine,Cardiology
 50000849,School of Medicine,Dermatology
-50000850,School of Medicine,"Medicine, Endocrinology, Metabolism, and Nutrition"
-50000853,School of Medicine,"Medicine, Gastroenterology"
-50000855,School of Medicine,"Medicine, Geriatrics"
-50000856,School of Medicine,"Medicine, Medical Oncology"
-50000857,School of Medicine,"Medicine, Hematology"
-50000858,School of Medicine,"Medicine, Infectious Diseases"
-50000859,School of Medicine,"Medicine, Rheumatology and Immunology"
-50000861,School of Medicine,"Medicine, Nephrology"
-50000865,School of Medicine,"Medicine, Pulmonary, Allergy, and Critical Care Medicine"
+50000850,School of Medicine,"Endocrinology, Metabolism, and Nutrition"
+50000853,School of Medicine,Gastroenterology
+50000855,School of Medicine,Geriatrics
+50000856,School of Medicine,Medical Oncology
+50000857,School of Medicine,Hematology
+50000858,School of Medicine,Infectious Diseases
+50000861,School of Medicine,Nephrology
+50000865,School of Medicine,"Pulmonary, Allergy, and Critical Care Medicine"
 50000867,School of Medicine,Human Vaccine Institute
 50000870,School of Medicine,Pediatrics
-50000875,School of Medicine,"Pediatrics, Primary Care Pediatrics"
-50000877,School of Medicine,"Pediatrics, Endocrinology"
-50000878,School of Medicine,"Pediatrics, Infectious Diseases"
-50000880,School of Medicine,"Pediatrics, Medical Genetics"
-50000881,School of Medicine,"Pediatrics, Neonatology"
-50000886,School of Medicine,"Pediatrics, Hematology-Oncology"
-50000888,School of Medicine,"Pediatrics, Cardiology"
 50000900,School of Medicine,Psychiatry & Behavioral Sciences
-50000905,School of Medicine,"Psychiatry, Child & Family Mental Health and Developmental Neuroscience"
 50000925,School of Medicine,Radiology
 50000936,School of Medicine,Radiation Oncology
 50000943,School of Medicine,Anesthesiology
 50000959,School of Medicine,Obstetrics and Gynecology
 50000972,School of Medicine,Ophthalmology
 50000983,School of Medicine,Surgery
-50000990,School of Medicine,Neurosurgery
 50000991,School of Medicine,Orthopaedics
-50193557,School of Medicine,"Medicine, Hematologic Malignancies and Cellular Therapy"
 50327916,Institutes and Provost's Academic Units,Global Health Institute
 50413712,Trinity College of Arts & Sciences,African and African American Studies
 50413713,Trinity College of Arts & Sciences,Statistical Science
@@ -86,5 +74,5 @@ ORGANIZATIONAL_UNIT,SCHOOL_NAME,ORG_DISPLAY_NAME
 50545114,Institutes and Provost's Academic Units,Duke Institute for Brain Sciences
 50691597,Institutes and Provost's Academic Units,Duke University Energy Initiative
 50893743,School of Medicine,Neurology
-50894753,School of Medicine,"Medicine, Medical Genetics"
+50894753,School of Medicine,Medical Genetics
 51031164,School of Medicine,Population Health Sciences
