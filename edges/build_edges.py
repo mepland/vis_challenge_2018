@@ -17,6 +17,9 @@ output_path = './'
 
 debug = False
 
+# keep only primary appointments for a simpler graph
+primary_only = False
+
 # For display purposes
 pd.set_option('display.max_rows', 200)
 pd.set_option('display.max_columns', 10)
@@ -173,8 +176,8 @@ df_fac['FACULTY_NAME'] = df_fac.apply(lambda row: combine_faculty_name(row['PRO_
 # admin appointments
 df_fac = df_fac.drop(df_fac[df_fac.APPOINTMENT_TYPE == "A"].index)
 
-# keep only primary appointments TODO just to start, if network is too sparse turn this off
-df_fac = df_fac.drop(df_fac[df_fac.APPOINTMENT_TYPE != "P"].index)
+if primary_only:
+    df_fac = df_fac.drop(df_fac[df_fac.APPOINTMENT_TYPE != "P"].index)
 
 # faculty not on a committee
 df_fac = df_fac.drop(df_fac[~df_fac.DUID.isin(df_cm.AdvisorDUID.unique())].index)
@@ -185,25 +188,28 @@ df_fac = df_fac.drop(df_fac[df_fac.ORGANIZATIONAL_UNIT.isin([50000280,50719999,5
 # merge related units
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000414], 50000403, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000472, 50896130, 50896131, 50896138, 50896140], 50000471, True)
-df_fac['ORGANIZATIONAL_UNIT'].replace([50000483], 50000480, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000518], 50000517, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50000551], 50413713, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000812, 50000814, 50000815, 50000816], 50000811, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000818], 50000817, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000831], 50000830, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000841, 50000842, 50000833, 50000836, 50000839, 50000843], 50000832, True)
-df_fac['ORGANIZATIONAL_UNIT'].replace([50000871], 50000870, True)
-df_fac['ORGANIZATIONAL_UNIT'].replace([50000912, 50000907, 50000913, 50000908, 50000906, 50000915, 50000909, 50000910], 50000900, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50000859], 50000808, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50000871, 50000874, 50000888, 50000877, 50000886, 50000878, 50000880, 50000881, 50000875], 50000870, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50000912, 50000907, 50000913, 50000908, 50000906, 50000915, 50000909, 50000910, 50000905], 50000900, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000930, 50000921, 50000922, 50000929, 50000931, 50000926, 50000932], 50000925, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000940, 50000939, 50000941], 50000936, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000952, 50000955, 50000958], 50000943, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000966, 50000965, 50217368], 50000959, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000982, 50000979, 50000973, 50000981, 50000977, 50000976], 50000972, True)
-df_fac['ORGANIZATIONAL_UNIT'].replace([50000998, 50667814, 50000988, 50001001, 50001000, 50000994, 50000993, 50739563, 50688073, 50000995], 50000983, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50000998, 50667814, 50000988, 50001001, 50001000, 50000994, 50000993, 50739563, 50688073, 50000995, 50000990], 50000983, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50001034], 50001029, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50001057], 50000850, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50043201], 50000810, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50084028], 50000496, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50084032], 50000528, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50084035], 50000554, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50193557], 50000857, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50293726, 50084030], 50000515, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50317277], 50000807, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50327914, 50418147, 50327915], 50000867, True)
@@ -221,13 +227,28 @@ df_fac['ORG_DISPLAY_NAME'].replace(".*Human Vaccine Institute.*", 'Human Vaccine
 df_fac['ORG_DISPLAY_NAME'].replace(".*Law.*", 'Duke Law School', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Anesthesiology.*", 'Anesthesiology', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Community and Family Medicine.*", 'Community and Family Medicine', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Institute for Decision and Statistical Science", 'Statistical Science', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Medicine, Hematologic Malignancies and Cellular Therapy", 'Medicine, Hematology', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Neurology.*", 'Neurology', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Obstetrics and Gynecology.*", 'Obstetrics and Gynecology', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Ophthalmology.*", 'Ophthalmology', regex=True, inplace=True)
-df_fac['ORG_DISPLAY_NAME'].replace("Psychiatry & Behavioral Sciences.*", 'Psychiatry & Behavioral Sciences', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Pediatrics.*", 'Pediatrics', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Public Policy Studies", 'Sanford School of Public Policy', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Radiology.*", 'Radiology', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Sarah Stedman Nutrition & Metabolism Center", 'Medicine, Endocrinology, Metabolism, and Nutrition', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Surgery.*", 'Surgery', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Neurosurgery", 'Surgery', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace(["Psychiatry & Behavioral Sciences.*", "Psychiatry, Child & Family Mental Health and Developmental Neuroscience"], 'Psychiatry & Behavioral Sciences', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Immunology", 'Medicine, Immunology', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Medicine, Rheumatology and Medicine, Immunology", 'Medicine, Immunology', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Medicine, ", '', regex=True, inplace=True)
+
+# Institutes and Provosts Academic Units | Nicholas Institute for Environmental Policy Solutions | 50312684
+# Nicholas School of the Environment | Environmental Sciences and Policy | 50000480
+df_fac['ORG_DISPLAY_NAME'].replace("Nicholas Institute for Environmental Policy Solutions", 'Environmental Sciences and Policy', regex=True, inplace=True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50000483, 50312684], 50000480, True)
+df_fac.loc[df_fac.ORGANIZATIONAL_UNIT == 50000480, 'SCHOOL_NAME'] = "Nicholas School of the Environment"
+
 
 # remove unwanted columns
 del df_fac['DISPLAY_NAME']
@@ -254,7 +275,7 @@ if debug:
 
     print "Number of unique faculty %d" % (len(df_fac.DUID.unique()))
 
-if debug and False: # when only selecting P appointments, all of them only have 1 row and it prints everyone
+if debug and not primary_only: # when only selecting P appointments, all of fac only have 1 row and it prints everyone...
     faculty_appointment_counts = df_fac['DUID'].value_counts()
     max_faculty_appointment_count = faculty_appointment_counts.max()
 
@@ -269,7 +290,7 @@ if debug and False: # when only selecting P appointments, all of them only have 
         print ""
 
 if debug:
-    print "Listing all org units by name"
+    print "\nListing all org units by name"
     for school_name in df_fac.SCHOOL_NAME.unique():
         df_fac_school = df_fac[(df_fac.SCHOOL_NAME == school_name)]
 
@@ -288,7 +309,7 @@ if debug:
                 print "\nno org units at all!!\n%s | %s" % (school_name, org_dis_name)
 
 if debug:
-    print "Listing all org units by number"
+    print "\nListing all org units by number"
     for org in df_fac.ORGANIZATIONAL_UNIT.unique():
         df_fac_org = df_fac[(df_fac.ORGANIZATIONAL_UNIT == org)]
 
@@ -324,6 +345,12 @@ df_cm = df_cm.drop(df_cm[~df_cm.AdvisorDUID.isin(df_fac.DUID.unique())].index)
 
 ########################################################
 # merge the two data frames
+
+if debug and False:
+    print "\nRHS df to merge"
+    print df_fac[['DUID', 'ORGANIZATIONAL_UNIT']].drop_duplicates().head(100)
+    print "Done printing RHS df"
+
 df_cm_merged = pd.merge(df_cm, df_fac[['DUID', 'ORGANIZATIONAL_UNIT']].drop_duplicates(),
 how='left',
 left_on = 'AdvisorDUID',
@@ -336,7 +363,15 @@ suffixes=('_cm', '_fac')
 del df_cm_merged['DUID']
 
 # remove advisors who are listed twice
-df_cm_merged = df_cm_merged.drop_duplicates(subset=['StudentIDFixed', 'AdvisorDUID'])
+if primary_only:
+    df_cm_merged = df_cm_merged.drop_duplicates(subset=['StudentIDFixed', 'AdvisorDUID'])
+else:
+    df_cm_merged = df_cm_merged.drop_duplicates(subset=['StudentIDFixed', 'AdvisorDUID', 'ORGANIZATIONAL_UNIT'])
+
+if debug and False:
+    print "\nMerged df"
+    print df_cm_merged.head(100)
+    print "\nDone printing merged df"
 
 ################################################################################################################
 ################################################################################################################
@@ -401,14 +436,18 @@ if debug:
 ########################################################
 print "\nNow saving out to %s" % (output_path)
 make_path(output_path)
-df_edges.to_csv(output_path+"edges.csv", index=False, na_rep='nan')
-df_org_names.to_csv(output_path+"org_names.csv", index=False, na_rep='nan')
+
+tag = ''
+if not primary_only: tag = "_all_appointments"
+
+df_edges.to_csv(output_path+"edges"+tag+".csv", index=False, na_rep='nan')
+df_org_names.to_csv(output_path+"org_names"+tag+".csv", index=False, na_rep='nan')
 
 if debug:
     make_path(output_path+"debug_dfs/")
-    df_cm_merged.to_csv(output_path+"debug_dfs/df_cm_merged.csv", index=False, na_rep='nan')
-    df_cm.to_csv(output_path+"debug_dfs/df_cm.csv", index=False, na_rep='nan')
-    df_fac.to_csv(output_path+"debug_dfs/df_fac.csv", index=False, na_rep='nan')
+    df_cm_merged.to_csv(output_path+"debug_dfs/df_cm_merged"+tag+".csv", index=False, na_rep='nan')
+    df_cm.to_csv(output_path+"debug_dfs/df_cm"+tag+".csv", index=False, na_rep='nan')
+    df_fac.to_csv(output_path+"debug_dfs/df_fac"+tag+".csv", index=False, na_rep='nan')
 
 ########################################################
 print "\nFinished, exiting.\n"
