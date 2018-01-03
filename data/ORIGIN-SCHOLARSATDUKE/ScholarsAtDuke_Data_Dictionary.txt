@@ -1,0 +1,76 @@
+File Name: Scholars@Duke_Publications_2012-2017
+Description: Publications for current (as of 10/2017) Duke faculty published from October 2012 - 2017
+(Fields with an asterisk will be non-null)
+
+DUID* - Duke Unique ID
+
+AUTHOR_URI* - Person's Unique ID in Scholars@Duke
+
+PUBLICATION_URI* - Publication ID in Scholars@Duke
+
+PUBLICATION_TITLE* - Publication Title
+
+PUBLICATION_DATE* - Publication Date
+
+PUBLICATON_TYPE* -  Publications categories as listed in Scholars@Duke (www.scholars.duke.edu/research)
+
+CITATION_SOURCE* - Name of the database from which the publication metadata was sourced
+
+JOURNAL_NAME - Name of the journal, for applicable publications
+
+DOI - Digital object identifier
+
+ISSN - International standard serial number
+
+EISSN - Electronic international standard serial number
+
+ISBN10 - 10-digit international standard book number
+
+ISBN13 - 13-digit international standard book number
+
+ABSTRACT - Abstract
+
+
+
+*********************************************************************
+
+
+
+File Name: ScholarsAtDuke_Faculty_OCTOBER2017
+Description: All current Duke faculty and their affiliations with Duke academic organizations.  
+
+DUID - Duke Unique ID
+
+DISPLAY_NAME - Display Name in Scholars@Duke
+
+PRO_FIRST_NAME - Professional First Name
+
+PRO_MIDDLE_NAME - Professional Middle Name
+
+PRO_LAST_NAME - Professional Last Name
+
+APPOINTMENT_TYPE - Type of appointment of affiliation.  All faculty have one and only one primary appointment designated by a "P". 
+Faculty can have multiple appointments of other types: administrative "A", secondary "S", and joint "J".  Memberships "M" signify an affiliation
+with a Duke center or institute (as opposed to a department or school). 
+
+APPOINTMENT_TITLE - Faculty title associated with an appointment
+
+ORG_DISPLAY_NAME - The common name used for the organization associated with an appointment
+
+ORGANIZATIONAL_UNIT - The unique identifier for the appointment organization.  Several organizational units can share the same ORG_DISPLAY_NAME.
+
+ORG_BFR_CODE - An alternative unique identifier for the appointment organization that contains hierarchical logic in the numbering.  Several ORG_BFR_CODES can share the same ORG_DISPLAY_NAME.  
+
+SCHOOL_NAME - The name of the school associated with an appointment or affiliation.  
+
+SCHOOL_ORG_UNIT - The unique identifier for the school associated with an appointment or affilaition.
+
+SCHOOL_BFR_CODE - An alternative unique identifier for the school associated with an appointment.
+
+
+
+
+
+
+
+

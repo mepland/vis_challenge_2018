@@ -1,0 +1,9 @@
+Note on "student_random_id" identifier! (December 18)
+It's been reported that the "student_random_id" column on the dissertation committees spreadsheet includes identification numbers that are repeated.  That is, the identifiers are NOT necessarily unique.
+
+To create unique identifiers, use a composite identifier, that is: use several of the variables together. We know of one person who used 4 bits of data:
+
+student_compid=catx('.',student_random_id,degree_Nbr,compl_term,acad_org);
+
+This eliminated the repeats, though retained one large dissertation committee that may be the result of reuse of an ID, the existence of an exceptionally large committee, or a clerical error.
+
