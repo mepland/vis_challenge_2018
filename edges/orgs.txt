@@ -1,0 +1,93 @@
+Divinity School | Divinity School | 50000379
+Duke Law School | Duke Law School | 50000471
+Fuqua School of Business | Fuqua School of Business | 50000403
+Institutes and Provost's Academic Units | Asian Pacific Studies Institute | 50000345
+Institutes and Provost's Academic Units | Center for Cognitive Neuroscience | 50000378
+Institutes and Provost's Academic Units | Center for Latin American and Caribbean Studies | 50000347
+Institutes and Provost's Academic Units | Center for Population Health & Aging | 50623303
+Institutes and Provost's Academic Units | Center on Biobehaviorial Health Disparities Research | 50981456
+Institutes and Provost's Academic Units | Duke Institute for Brain Sciences | 50545114
+Institutes and Provost's Academic Units | Duke Population Research Center | 50623306
+Institutes and Provost's Academic Units | Duke Science & Society | 50000354
+Institutes and Provost's Academic Units | Duke University Energy Initiative | 50691597
+Institutes and Provost's Academic Units | Global Health Institute | 50327916
+Institutes and Provost's Academic Units | Kenan Institute for Ethics | 50000373
+Institutes and Provost's Academic Units | Social Science Research Institute | 50437754
+Nicholas School of the Environment | Earth and Ocean Sciences | 50000485
+Nicholas School of the Environment | Environmental Sciences and Policy | 50000480
+Nicholas School of the Environment | Marine Science and Conservation | 50000486
+Pratt School of Engineering | Biomedical Engineering | 50000398
+Pratt School of Engineering | Civil and Environmental Engineering | 50000393
+Pratt School of Engineering | Electrical and Computer Engineering | 50000394
+Pratt School of Engineering | Mechanical Engineering and Materials Science | 50000396
+Sanford School of Public Policy | Center for Child and Family Policy | 50970174
+Sanford School of Public Policy | Sanford School of Public Policy | 50500091
+School of Medicine | Anesthesiology | 50000943
+School of Medicine | Biochemistry | 50000807
+School of Medicine | Biostatistics & Bioinformatics | 50000830
+School of Medicine | Cardiology | 50000847
+School of Medicine | Cell Biology | 50000803
+School of Medicine | Center for the Study of Aging and Human Development | 50001015
+School of Medicine | Community and Family Medicine | 50000832
+School of Medicine | Dermatology | 50000849
+School of Medicine | Duke Cancer Institute | 50001023
+School of Medicine | Duke Center for Human Genome Variation | 50586670
+School of Medicine | Duke Clinical Research Institute | 50001029
+School of Medicine | Duke Molecular Physiology Institute | 50000863
+School of Medicine | Duke-UNC Center for Brain Imaging and Analysis | 50001058
+School of Medicine | Endocrinology, Metabolism, and Nutrition | 50000850
+School of Medicine | Gastroenterology | 50000853
+School of Medicine | General Internal Medicine | 50000852
+School of Medicine | Geriatrics | 50000855
+School of Medicine | Hematology | 50000857
+School of Medicine | Human Vaccine Institute | 50000867
+School of Medicine | Immunology | 50000808
+School of Medicine | Infectious Diseases | 50000858
+School of Medicine | Molecular Genetics and Microbiology | 50000820
+School of Medicine | Nephrology | 50000861
+School of Medicine | Neurobiology | 50000810
+School of Medicine | Neurology | 50893743
+School of Medicine | Obstetrics and Gynecology | 50000959
+School of Medicine | Oncology | 50000936
+School of Medicine | Ophthalmology | 50000972
+School of Medicine | Orthopaedics | 50000991
+School of Medicine | Pathology | 50000811
+School of Medicine | Pediatrics | 50000870
+School of Medicine | Pharmacology & Cancer Biology | 50000817
+School of Medicine | Population Health Sciences | 51031164
+School of Medicine | Psychiatry & Behavioral Sciences | 50000900
+School of Medicine | Pulmonary, Allergy, and Critical Care Medicine | 50000865
+School of Medicine | Radiology | 50000925
+School of Medicine | Regeneration Next Initiative | 51007575
+School of Medicine | Surgery | 50000983
+School of Nursing | School of Nursing | 50000758
+Trinity College of Arts & Sciences | African and African American Studies | 50413712
+Trinity College of Arts & Sciences | Art, Art History & Visual Studies | 50000493
+Trinity College of Arts & Sciences | Asian and Middle Eastern Studies | 50000494
+Trinity College of Arts & Sciences | Biology | 50000496
+Trinity College of Arts & Sciences | Chemistry | 50000498
+Trinity College of Arts & Sciences | Classical Studies | 50000499
+Trinity College of Arts & Sciences | Computer Science | 50000500
+Trinity College of Arts & Sciences | Cultural Anthropology | 50000503
+Trinity College of Arts & Sciences | Dance | 50000540
+Trinity College of Arts & Sciences | Economics | 50000504
+Trinity College of Arts & Sciences | Education | 50000545
+Trinity College of Arts & Sciences | English | 50000506
+Trinity College of Arts & Sciences | Evolutionary Anthropology | 50000495
+Trinity College of Arts & Sciences | Gender, Sexuality & Feminist Studies | 50000562
+Trinity College of Arts & Sciences | Germanic Languages | 50000508
+Trinity College of Arts & Sciences | History | 50000509
+Trinity College of Arts & Sciences | Linguistics | 50000595
+Trinity College of Arts & Sciences | Literature | 50000554
+Trinity College of Arts & Sciences | Mathematics | 50000512
+Trinity College of Arts & Sciences | Music | 50000515
+Trinity College of Arts & Sciences | Philosophy | 50000516
+Trinity College of Arts & Sciences | Physics | 50000517
+Trinity College of Arts & Sciences | Political Science | 50000522
+Trinity College of Arts & Sciences | Psychology and Neuroscience | 50000523
+Trinity College of Arts & Sciences | Religious Studies | 50000528
+Trinity College of Arts & Sciences | Romance Studies | 50000529
+Trinity College of Arts & Sciences | Slavic and Eurasian Studies | 50000530
+Trinity College of Arts & Sciences | Sociology | 50000532
+Trinity College of Arts & Sciences | Statistical Science | 50413713
+Trinity College of Arts & Sciences | Theater Studies | 50000531

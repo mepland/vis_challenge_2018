@@ -11,7 +11,6 @@ ORGANIZATIONAL_UNIT,SCHOOL_NAME,ORG_DISPLAY_NAME
 50000398,Pratt School of Engineering,Biomedical Engineering
 50000403,Fuqua School of Business,Fuqua School of Business
 50000471,Duke Law School,Duke Law School
-50000478,Nicholas School of the Environment,Nicholas School of the Environment
 50000480,Nicholas School of the Environment,Environmental Sciences and Policy
 50000485,Nicholas School of the Environment,Earth and Ocean Sciences
 50000486,Nicholas School of the Environment,Marine Science and Conservation
@@ -59,7 +58,6 @@ ORGANIZATIONAL_UNIT,SCHOOL_NAME,ORG_DISPLAY_NAME
 50000852,School of Medicine,General Internal Medicine
 50000853,School of Medicine,Gastroenterology
 50000855,School of Medicine,Geriatrics
-50000856,School of Medicine,Medical Oncology
 50000857,School of Medicine,Hematology
 50000858,School of Medicine,Infectious Diseases
 50000861,School of Medicine,Nephrology
@@ -69,7 +67,7 @@ ORGANIZATIONAL_UNIT,SCHOOL_NAME,ORG_DISPLAY_NAME
 50000870,School of Medicine,Pediatrics
 50000900,School of Medicine,Psychiatry & Behavioral Sciences
 50000925,School of Medicine,Radiology
-50000936,School of Medicine,Radiation Oncology
+50000936,School of Medicine,Oncology
 50000943,School of Medicine,Anesthesiology
 50000959,School of Medicine,Obstetrics and Gynecology
 50000972,School of Medicine,Ophthalmology
@@ -90,7 +88,6 @@ ORGANIZATIONAL_UNIT,SCHOOL_NAME,ORG_DISPLAY_NAME
 50623306,Institutes and Provost's Academic Units,Duke Population Research Center
 50691597,Institutes and Provost's Academic Units,Duke University Energy Initiative
 50893743,School of Medicine,Neurology
-50894753,School of Medicine,Medical Genetics
 50970174,Sanford School of Public Policy,Center for Child and Family Policy
 50981456,Institutes and Provost's Academic Units,Center on Biobehaviorial Health Disparities Research
 51007575,School of Medicine,Regeneration Next Initiative

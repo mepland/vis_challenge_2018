@@ -205,7 +205,7 @@ df_fac['ORGANIZATIONAL_UNIT'].replace([50000859], 50000808, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000871, 50000874, 50000888, 50000877, 50000886, 50000878, 50000880, 50000881, 50000875], 50000870, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000912, 50000907, 50000913, 50000908, 50000906, 50000915, 50000909, 50000910, 50000905], 50000900, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000930, 50000921, 50000922, 50000929, 50000931, 50000926, 50000932], 50000925, True)
-df_fac['ORGANIZATIONAL_UNIT'].replace([50000940, 50000939, 50000941], 50000936, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50000940, 50000939, 50000941, 50000856], 50000936, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000952, 50000955, 50000958], 50000943, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000966, 50000965, 50217368], 50000959, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000982, 50000979, 50000973, 50000981, 50000977, 50000976], 50000972, True)
@@ -228,6 +228,7 @@ df_fac['ORGANIZATIONAL_UNIT'].replace([50496347, 50500096, 50500080, 50000526], 
 df_fac['ORGANIZATIONAL_UNIT'].replace([50719993], 50000532, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50893727], 50000862, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50893744, 50893740, 50893742, 50893746, 50893739, 50893741, 50893745], 50893743, True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50894753], 50000820, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50986076], 50000991, True)
 
 df_fac['ORG_DISPLAY_NAME'].replace(".*Human Vaccine Institute.*", 'Human Vaccine Institute', regex=True, inplace=True)
@@ -248,14 +249,15 @@ df_fac['ORG_DISPLAY_NAME'].replace("Neurosurgery", 'Surgery', regex=True, inplac
 df_fac['ORG_DISPLAY_NAME'].replace(["Psychiatry & Behavioral Sciences.*", "Psychiatry, Child & Family Mental Health and Developmental Neuroscience"], 'Psychiatry & Behavioral Sciences', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Immunology", 'Medicine, Immunology', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Medicine, Rheumatology and Medicine, Immunology", 'Medicine, Immunology', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace("Medical Genetics", 'Molecular Genetics and Microbiology', regex=True, inplace=True)
+df_fac['ORG_DISPLAY_NAME'].replace(".*Oncology", 'Oncology', regex=True, inplace=True)
 df_fac['ORG_DISPLAY_NAME'].replace("Medicine, ", '', regex=True, inplace=True)
 
-# Institutes and Provosts Academic Units | Nicholas Institute for Environmental Policy Solutions | 50312684
-# Nicholas School of the Environment | Environmental Sciences and Policy | 50000480
+# Nicholas School of the Environment merging
 df_fac['ORG_DISPLAY_NAME'].replace("Nicholas Institute for Environmental Policy Solutions", 'Environmental Sciences and Policy', regex=True, inplace=True)
-df_fac['ORGANIZATIONAL_UNIT'].replace([50000483, 50312684], 50000480, True)
+df_fac['ORG_DISPLAY_NAME'].replace("Nicholas School of the Environment", 'Environmental Sciences and Policy', regex=True, inplace=True)
+df_fac['ORGANIZATIONAL_UNIT'].replace([50000483, 50312684, 50000478], 50000480, True)
 df_fac.loc[df_fac.ORGANIZATIONAL_UNIT == 50000480, 'SCHOOL_NAME'] = "Nicholas School of the Environment"
-
 
 # remove unwanted columns
 del df_fac['DISPLAY_NAME']
@@ -349,6 +351,22 @@ df_org_names = df_fac[['ORGANIZATIONAL_UNIT', 'SCHOOL_NAME', 'ORG_DISPLAY_NAME']
 ########################################################
 # drop committee members who are not listed in faculty
 df_cm = df_cm.drop(df_cm[~df_cm.AdvisorDUID.isin(df_fac.DUID.unique())].index)
+
+
+if debug:
+    print "Degree subjects:"
+    print "AcadOrg"
+    print len(df_cm.AcadOrg.unique())
+    print df_cm.AcadOrg.unique()
+
+    print "AcadPlan"
+    print len(df_cm.AcadPlan.unique())
+    print df_cm.AcadPlan.unique()
+
+    print "AcadProg"
+    print len(df_cm.AcadProg.unique())
+    print df_cm.AcadProg.unique()
+
 
 ########################################################
 # merge the two data frames
