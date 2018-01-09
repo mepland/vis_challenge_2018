@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Edge Generation Schematic
+
+\usepackage{tikz}
+\usetikzlibrary{shapes} % shapes.arrows
+\usetikzlibrary{arrows} % deprecated, should migrate away from o-latex, someday...
+\usetikzlibrary{calc}
+
+\tikzset{edgeGen/.pic={
+
+  \pgfmathsetmacro{\textscale}{0.2}
+  % \tikzstyle{annot} = [scale=\textscale,text centered]
+  % \tikzstyle{labeltext} = [scale=0.8,text centered] % its the same at 0.8 but is now easily changeable
+
+  \tikzstyle{ell} = [draw, ellipse, inner sep=8pt, scale=\textscale, text centered]
+  \tikzstyle{squa} = [draw, inner sep=8pt, scale=\textscale, text centered]
+
+  \pgfmathsetmacro{\profx}{0}
+  \pgfmathsetmacro{\profy}{1}
+
+  \pgfmathsetmacro{\subjectx}{2}
+  \pgfmathsetmacro{\subjectysep}{0.6}
+
+  \node[draw, inner sep=8pt, scale=0.28, text centered, rotate=90] at (-1.2,0) (comm) {PhD Committee X};
+
+  \node[squa] at (\profx,\profy) (topName) {Prof. Jane};
+  \draw[-] (comm.south) -- (topName.west);
+
+  \node[ell] at (\subjectx,\profy+0.6*\subjectysep) (topNameOrg1) {Chemistry (P)};
+  \node[ell] at (\subjectx,\profy-0.6*\subjectysep) (topNameOrg2) {Biochemistry (S)};
+  \draw[-] (topName.east) -- (topNameOrg1.west);
+  \draw[-] (topName.east) -- (topNameOrg2.west);
+
+  \node[scale=0.4, text centered, rotate=90] at (\profx,0) {\ldots};
+
+  \node[squa] at (\profx,-\profy) (bottomName) {Prof. John};
+  \draw[-] (comm.south) -- (bottomName.west);
+
+  \node[ell] at (\subjectx,-\profy+\subjectysep) (bottomNameOrg1) {Biology (P)};
+  \node[ell] at (\subjectx,-\profy) (bottomNameOrg2) {Biochemistry (S)};
+  \node[ell] at (\subjectx,-\profy-\subjectysep) (bottomNameOrg3) {Neurobiology (S)};
+  \draw[-] (bottomName.east) -- (bottomNameOrg1.west);
+  \draw[-] (bottomName.east) -- (bottomNameOrg2.west);
+  \draw[-] (bottomName.east) -- (bottomNameOrg3.west);
+
+
+  \node[
+    single arrow,                  % Shape of the node
+    single arrow head extend=20pt,  % Actual width of arrow head
+    single arrow tip angle=135,    % Adjust arrow tip angle
+    inner sep=10pt,                 % Separation between node content and node shape
+    shape border rotate=270,       % Rotate the arrow shape to point down
+    rotate=90,
+    draw,
+    scale=0.3,
+  ] at (3.8,0) (bigArrow) {Combinations};% 
+
+
+  \pgfmathsetmacro{\combx}{7.2}
+  \pgfmathsetmacro{\comby}{-0.2}
+  \pgfmathsetmacro{\combr}{1.45}
+
+  \node[ell] at ({\combx+\combr*cos(72*0+90)}, {\comby+\combr*sin(72*0+90)}) (comb-0) {Chemistry};
+  \node[ell] at ({\combx+\combr*cos(72*1+90)}, {\comby+\combr*sin(72*1+90)}) (comb-1) {Biochemistry};
+  \node[ell] at ({\combx+\combr*cos(72*2+90)}, {\comby+\combr*sin(72*2+90)}) (comb-2) {Biology};
+  \node[ell] at ({\combx+\combr*cos(72*3+90)}, {\comby+\combr*sin(72*3+90)}) (comb-3) {Biochemistry};
+  \node[ell] at ({\combx+\combr*cos(72*4+90)}, {\comby+\combr*sin(72*4+90)}) (comb-4) {Neurobiology};
+
+  \foreach \i in {0,...,4}
+    \foreach \j in {\i,...,4}
+      \draw[-] (comb-\i) -- (comb-\j);
+
+}}
+
