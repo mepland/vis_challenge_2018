@@ -1,0 +1,24 @@
+% Load colors for everything!
+\input{\includedir/colors.tex}
+
+\usepackage{tikz}
+\usepackage{adjustbox}
+% \usepackage{graphicx}
+
+% \includetikz{boxwidth}{tikzname}
+
+\newcommand{\includetikz}[2]{%
+
+% \framebox{ % show the frame around our box, for debugging spacing issues
+
+    \resizebox{#1}{!}{%
+      \centering
+      \begin{tikzpicture}[remember picture]%
+        \pic[anchor=center,draw,scale=1]{#2};%
+      \end{tikzpicture}%
+    } % end resizebox
+
+%  } % end of framebox
+
+} % end of newcommand
+

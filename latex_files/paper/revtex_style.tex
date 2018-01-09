@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Turn off revtex4-1 meaningless float warnings
+\usepackage{silence} \WarningFilter{revtex4-1}{Repair the float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make the revtex4-1 date not have annoying parentheses any more
+\usepackage{etoolbox}
+\makeatletter
+% \frontmatter@RRAP@format is responsible for the parentheses
+\patchcmd{\frontmatter@RRAP@format}{(}{}{}{}
+\patchcmd{\frontmatter@RRAP@format}{)}{}{}{}
+\renewcommand\Dated@name{}
+\makeatother
+
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% citation and href links auto-color
+% \let\oldcite=\cite                                                              
+% \renewcommand{\cite}[1]{\textcolor{Blue Devil Blue}{\oldcite{#1}}}
+
+% \let\oldhref=\href                                                              
+% \renewcommand{\href}[2]{\textcolor{Blue Devil Blue}{\oldhref{#1}{#2}}}
+
+% \let\oldurl=\url                                                              
+% \renewcommand{\url}[2]{\textcolor{Blue Devil Blue}{\oldurl{#1}{#2}}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% customized title page
+
+%\makeatletter
+%\let\insertadvisor\relax
+%\newcommand\advisortitle{Advisor}
+%\mode<all>
+%{
+%  \newcommand\advisor[1]{\def\insertadvisor{#1}}
+%}
+%
+%
+%\newtoggle{atlasLogo}
+%\newtoggle{dukeLogo}
+%
+%\toggletrue{atlasLogo}
+%\toggletrue{dukeLogo}
+%
+%\defbeamertemplate*{title page}{mydefault}[1][]
+%{
+%  \vbox{}
+%  \vfill
+%  \begingroup
+%    \centering
+%
+%    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+%      \usebeamerfont{title}\inserttitle\par%
+%      \ifx\insertsubtitle\@empty\relax%
+%      \else%
+%        \vskip0.25em%
+%        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+%      \fi%
+%    \end{beamercolorbox}%
+%
+%    \vskip0.8em\par
+%
+%    \begin{beamercolorbox}[sep=0pt,center,#1]{author}
+%      \usebeamerfont{author}\insertauthor
+%    \end{beamercolorbox}
+%
+%    \vskip0.8em\par
+%
+%    \ifx\insertadvisor\relax\relax\else
+%    \begin{beamercolorbox}[sep=0pt,center,#1]{advisor}
+%      \usebeamerfont{advisor}\advisortitle:~\insertadvisor
+%    \end{beamercolorbox}
+%    \fi
+%
+%    \begin{beamercolorbox}[sep=0pt,center,#1]{institute}
+%      \usebeamerfont{institute}\insertinstitute
+%    \end{beamercolorbox}
+%
+%    \begin{beamercolorbox}[sep=0pt,center,#1]{date}
+%      \usebeamerfont{date}\insertdate
+%    \end{beamercolorbox}\vskip0.5em
+%
+%  \endgroup
+%  \vfill
+%
+%  \begin{textblock}{90}[0.5,0.5](50,82) % {width}[hanchor, vanchor](hpos, vpos)
+%    \begin{columns}
+%
+%      \iftoggle {atlasLogo} {%
+%      \column{.45\textwidth}\centering%
+%        \includegraphics[height=1.32cm]{\includedir/logos/ATLAS-Logo-Ref-RGB.pdf}%
+%      }{} % end if atlasLogo
+%
+%      \ifboolexpr { togl {atlasLogo} and togl {dukeLogo} } {%
+%        \column{.1\textwidth}\centering%
+%      }{} % end if atlasLogo and dukeLogo
+%
+%      \iftoggle {dukeLogo} {%
+%        \column{.45\textwidth}\centering%
+%          \includegraphics[height=1.32cm]{\includedir/logos/dukewordmark_vert_001a57.pdf}%
+%      }{} % end if dukeLogo
+%
+%    \end{columns}
+%  \end{textblock}
+%
+%
+%}
+%\setbeamertemplate{title page}[mydefault][colsep=-4bp,rounded=true,shadow=\beamer@themerounded@shadow]
+%\makeatother
+
+

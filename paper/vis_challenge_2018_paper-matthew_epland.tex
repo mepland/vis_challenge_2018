@@ -1,0 +1,81 @@
+\documentclass[notitlepage,aps,prd,nofootinbib]{revtex4-1}
+  
+% \newcommand{\figuresComm}{../../../figuresComm}
+\newcommand{\includedir}{../latex_files}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% usepackages
+\usepackage{amsmath,amssymb,bbm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[protrusion=true,expansion=true]{microtype} % make text fow nice...
+\usepackage{verbatim} % verbatim text and comment environment
+\usepackage{lmodern} % allowing font sizes at arbitrary sizes
+\usepackage[free-standing-units]{siunitx} % units package, see https://www.ctan.org/pkg/siunitx
+\usepackage[absolute,overlay]{textpos} % for textblock* absolute positioning 
+\TPGrid{100}{100} % make our textpos grid 100 by 100 for easy positioning 
+% \TPGrid[20mm,20mm]{100}{100} % default mm grid
+%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red!10,subgridcolor=green!10]{eso-pic} % layout grid, mm
+%\usepackage{tcolorbox}
+%\usepackage{enumitem}
+%\usepackage{fancyvrb}
+%\usepackage{ulem}
+%\usepackage{listings}
+\usepackage{overpic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Include commands, style, colors, and abbreviations
+\input{\includedir/general.tex} % my general commands
+\input{\includedir/paper/revtex_style.tex} % style setup
+% \input{\includedir/latex/abbreviations.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% load tikz pictures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% document setup
+\makeatletter\hypersetup{
+    breaklinks, baseurl=http://, pdfborder=0 0 0, pdfpagemode=UseNone, pdfstartpage=1, bookmarksopen=false, bookmarksdepth=2, % to show sections and subsections
+    pdfauthor      = {Matthew Epland}, %
+    pdftitle       = {Epland - Duke Visualization Challenge 2018}, % was including the subtitle as well and I wanted to shorten/tweak it....
+    pdfsubject     = {},               %
+    pdfkeywords    = {Duke Visualization Challenge 2018, Duke, Interdisciplinary, Network Analysis, Methods}
+}\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Duke Visualization Challenge 2018: Methods}
+\author{Matthew\,\,Epland}
+% \author{Matthew Epland}
+\affiliation{Department of Physics, Duke University, Durham, NC 27707}
+% \date{\today}
+\date{January 22, 2018}
+
+
+\begin{abstract}
+Abstract goes here.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Intro.
+
+\section{Methods}
+Made network, interactivly displayed with \texttt{visJS2jupyter} \cite{visJS2jupyter}.
+
+\section{Future Improvements}
+Improvements.
+
+\section{Conclusions}
+Results.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{\includedir/atlasBibStyleWithTitle}
+\bibliography{\includedir/bib.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
