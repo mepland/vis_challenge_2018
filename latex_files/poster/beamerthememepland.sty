@@ -1,0 +1,157 @@
+% adapted from
+% https://github.com/deselaers/latex-beamerposter/blob/master/examples/03/beamerthemeZH.sty
+% and 
+% https://raw.githubusercontent.com/dbjergaard/duke-beamer-theme/master/beamerthemeDuke.sty
+\ProvidesPackage{beamerthememepland}
+
+\mode<presentation>
+
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{calc}
+
+%\useoutertheme[width=0pt]{sidebar}
+%\useinnertheme{circles}
+
+% Tweaks to specific elements on each page
+%\setbeamercolor*{item}{fg=Duke Blue}
+%\setbeamercolor*{frametitle}{parent=palette primary}
+%\setbeamercolor*{title}{fg=Duke Blue}
+%\setbeamercolor{alerted text}{fg=PMS 166}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%It seems many of the following entries do not control any visible Behaviour. All such entries are
+%set to red, so that they are easy to spot if they ever become visible
+
+\setbeamercolor{headline}{fg=red,bg=Blue Devil Blue}
+\setbeamercolor{footline}{fg=red, bg=red}
+\setbeamerfont{footline}{size=\large,series=\bf}
+
+\setbeamercolor{separation line}{bg=Light Gray} % Creates line at bottom, but it's fine...
+
+\setbeamercolor{title in headline}{fg=white}
+\setbeamercolor{author in headline}{fg=white}
+\setbeamercolor{institute in headline}{fg=white}
+
+\setbeamercolor{framesubtitle}{fg=red, bg=ta2gray}
+\setbeamercolor{author in head/foot}{fg=white, bg=Blue Devil Blue}
+\setbeamercolor{title in head/foot}{fg=red, bg=red}
+
+\setbeamercolor{normal text}{fg=PMS Black 3,bg=Light Gray}
+\setbeamercolor*{block body}{fg=black, bg=white}
+\setbeamercolor*{block title}{fg=white,bg=PMS Cool Gray 11}
+\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamercolor{upper separation line head}{fg=red}
+
+\setbeamercolor*{example body}{fg=red,bg=red}
+\setbeamercolor*{example text}{fg=red,bg=red}
+\setbeamercolor*{example title}{bg=red,fg=red}
+
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{structure}{fg=Blue Devil Blue}
+
+\setbeamertemplate{itemize items}{\color{PMS Cool Gray 11}$\blacktriangleright$}
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+\newenvironment<>{myblock}[1]{%
+ \begin{actionenv}#2%
+ \def\insertblocktitle{\centering#1}%
+ \par%
+ \usebeamertemplate{block begin}\leftskip=14pt\rightskip=14pt\vspace{30pt}} % edit whitespace under each heading
+ {\par\vspace{10pt}\usebeamertemplate{block end}
+ \end{actionenv}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !!! This environment can't both have nice margins AND display the contained text as justified:
+% We preferentially use the above but keep this one just-in-case
+\setbeamertemplate{block begin}{
+\setlength{\mylength}{\textwidth+2ex}%
+  \vskip2ex
+  \begin{beamercolorbox}[ht=2.8ex,dp=2ex, wd=\mylength, center,rounded=false,shadow=false,leftskip=1cm,colsep*=0ex]{block title}%
+    \usebeamerfont*{block title}\centering \insertblocktitle
+  \end{beamercolorbox}\vskip-9pt%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5ex}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=false,shadow=false,center,wd=\textwidth,]{block body}%
+    \ifbeamercolorempty[bg]{block body}\vbox{}%
+  \begin{minipage}{0.96\textwidth}\vbox{}%
+  \justify}
+  \setbeamertemplate{block end}{
+  \end{minipage}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+
+      \begin{column}{.7\paperwidth}
+        \vskip4ex
+        \begin{flushleft}
+          \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[2ex]}
+          \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[0.5ex]}
+          \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[0.5ex]}
+          \vskip1ex
+        \end{flushleft}
+      \end{column}
+
+      \begin{column}{.05\paperwidth}
+
+      \end{column}
+
+      \begin{column}{.2\paperwidth}
+        \vskip1cm
+        \begin{flushright}
+          % \colorbox{white}{\includegraphics[height=6cm]{../supporting_files/logos/duke_logo.pdf}}\hspace*{0.5cm}%
+          % \colorbox{white}{\includegraphics[height=6cm]{../supporting_files/atlaslatex-01-05-03/logos/AT_atlaslogo.pdf}}
+          % \colorbox{white}{\includegraphics[height=6cm]{../supporting_files/logos/ATLAS_EPS/ATLAS-Logo-Ref-RGB.pdf}}
+          \includegraphics[height=6cm]{\includedir/dukewordmark_vert_white.pdf}
+        \end{flushright}
+        \vskip1ex % seems counter intuitive, but spaces the blue around the logo the best
+        \vskip-1.5cm
+      \end{column}
+
+    \end{columns}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  \vskip-3cm % edit white space under top blue title bar, plus another vspace setting in the doc itself
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    \href{https://rc.duke.edu/scholars-vis-challenge-2018/}{Duke Visualization Challenge 2018} % TODO hard coded
+    \hfill
+    \kern-9.5cm % manually adjust by hand!!
+    % \@date % gives \today, not the set \date
+    January 22, 2018% TODO hard coded
+    \hfill
+    \href{mailto:matthew.epland@duke.edu}{matthew.epland@duke.edu} % TODO hard coded
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%Some beamer customizations:
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered]{}% Number float-like environments
+
+\mode<all>

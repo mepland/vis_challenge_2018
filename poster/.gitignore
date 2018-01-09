@@ -1,0 +1,27 @@
+# Generic files to ignore
+*.root
+*.aux
+*.bak
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.spl
+*.toc
+*.vrb
+*.mp
+*.t1
+*.1
+*.swp
+*.log
+*Notes.bib
+
+# Directories to ignore
+
+# Specific files to ignore
+

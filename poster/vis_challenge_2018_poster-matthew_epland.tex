@@ -1,0 +1,116 @@
+\documentclass{beamer}
+\newcommand{\includedir}{../latex_files}
+
+\usepackage[orientation=landscape,size=mepland3x3,scale=1.0,debug]{\includedir/poster/beamerposter}
+\mode<presentation>{\usepackage{\includedir/poster/beamerthememepland}}
+\newlength{\mylength} % need to declare here for use in beamerthememepland
+
+% used in old poster packages TODO delete later
+% \usepackage[utf8]{inputenc}
+% \usepackage[english]{babel} % want to remove but crashes..
+% \usepackage{array,booktabs,tabularx}
+% \newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
+ 
+% \newcommand{\figuresComm}{../../../figuresComm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% usepackages
+\usepackage{amsmath,amssymb,bbm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[protrusion=true,expansion=true]{microtype} % make text fow nice...
+\usepackage{verbatim} % verbatim text and comment environment
+\usepackage{lmodern} % allowing font sizes at arbitrary sizes
+\usepackage[free-standing-units]{siunitx} % units package, see https://www.ctan.org/pkg/siunitx
+\usepackage[absolute,overlay]{textpos} % for textblock* absolute positioning 
+\TPGrid{100}{100} % make our textpos grid 100 by 100 for easy positioning 
+% \TPGrid[20mm,20mm]{100}{100} % default mm grid
+%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red!10,subgridcolor=green!10]{eso-pic} % layout grid, mm
+%\usepackage{tcolorbox}
+%\usepackage{enumitem}
+%\usepackage{fancyvrb}
+%\usepackage{ulem}
+%\usepackage{listings}
+\usepackage{overpic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Include commands, style, colors, and abbreviations
+\input{\includedir/general.tex} % my general commands
+% \input{\includedir/latex/abbreviations.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% load tikz pictures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% document setup
+\makeatletter\hypersetup{
+    breaklinks, baseurl=http://, pdfborder=0 0 0, pdfpagemode=UseNone, pdfstartpage=1, bookmarksopen=false, bookmarksdepth=2, % to show sections and subsections
+    pdfauthor      = {Matthew Epland}, %
+    pdftitle       = {Epland - Duke Visualization Challenge 2018: Poster}, % was including the subtitle as well and I wanted to shorten/tweak it....
+    pdfsubject     = {},               %
+    pdfkeywords    = {Duke Visualization Challenge 2018, Duke, Interdisciplinary, Network Analysis, Poster}
+}\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\Huge Title TBD}
+\author{Matthew Epland}
+\institute[Duke]{Duke University}
+
+\newlength{\columnheight}
+\setlength{\columnheight}{80cm}
+
+\begin{document}
+
+\begin{frame}
+\vspace{2.5cm} % edit at the end
+\begin{columns}
+% left column
+\begin{column}{.57\textwidth}
+\begin{beamercolorbox}[center]{postercolumn}
+\begin{minipage}{.98\textwidth}  % tweaks the width, makes a new \textwidth
+\parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the height, width and textwidth simultaneously
+
+  \begin{myblock}{Block One}
+    \begin{itemize}
+      \item TODO 1
+    \end{itemize}
+  \end{myblock}\vfill
+
+  \begin{myblock}{Block Two}
+    \begin{itemize}
+      \item TODO 2
+    \end{itemize}
+  \end{myblock}\vfill
+
+% end of left column
+}\end{minipage}\end{beamercolorbox}
+\end{column}
+
+% right column
+\begin{column}{.43\textwidth}
+\begin{beamercolorbox}[center]{postercolumn}
+\begin{minipage}{.98\textwidth}
+\parbox[t][\columnheight]{\textwidth}{
+
+  \begin{myblock}{Block Three}
+    \begin{itemize}
+      \item Used \texttt{visJS2jupyter} \cite{visJS2jupyter}.
+    \end{itemize}
+  \end{myblock}\vfill
+
+  \begin{myblock}{References}
+    \bibliographystyle{\includedir/bib/atlasBibStyleWoTitle}
+    % {\scriptsize
+    {\footnotesize
+      \bibliography{\includedir/bib/bib.bib}
+    }
+  \end{myblock}\vfill
+
+% end of right oclumn
+}\end{minipage}\end{beamercolorbox}
+\end{column}
+
+\end{columns}
+\end{frame}
+\end{document}
