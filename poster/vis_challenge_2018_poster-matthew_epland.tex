@@ -11,7 +11,7 @@
 % \usepackage{array,booktabs,tabularx}
 % \newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
  
-\newcommand{\figures}{../outputs}
+\newcommand{\figures}{../outputs/plots}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % usepackages
@@ -80,20 +80,32 @@
   \begin{myblock}{Methods}
     \begin{itemize}
       \item Graph connections between academic organizations found in PhD committees
+      \item TODO
     \end{itemize}
     \vspace{0.8cm}
-    \centering
-    \fbox{\includetikz{40cm}{edgeGen}}
-
+    \begin{center}
+      % \fbox{
+      \includetikz{40cm}{edgeGen}
+      % }
+    \end{center}
   \end{myblock}\vfill
 
-  \begin{myblock}{Block Two}
+
+  \begin{myblock}{Academic Organization Graph}
+    \vspace{0.8cm}
+    \begin{center}
+      \includegraphics[width=\textwidth]{\figures/network_all_annotated.pdf}
+    \end{center}
+  \end{myblock}\vfill
+
+
+  \begin{myblock}{Conclusions}
     \begin{itemize}
-      \item TODO 2
+      \item TODO
+      \item Used \texttt{visJS2jupyter} \cite{visJS2jupyter} % TODO dummy citation for now just to compile, won't actually be on final poster
     \end{itemize}
-
-
   \end{myblock}\vfill
+
 
 % end of left column
 }\end{minipage}\end{beamercolorbox}
@@ -105,11 +117,20 @@
 \begin{minipage}{.98\textwidth}
 \parbox[t][\columnheight]{\textwidth}{
 
-  \begin{myblock}{Block Three}
+  \begin{myblock}{Measuring Interdisciplinary Activity}
     \begin{itemize}
-      \item Used \texttt{visJS2jupyter} \cite{visJS2jupyter}.
+      \item Compute ``Interdisciplinary Fraction'' as $w_{\mathrm{external\,edges}}~/~w_{\mathrm{all\,edges}}$
+      \item Slice graph by academic year to see changes over time
+      \item TODO
     \end{itemize}
+    \vspace{0.8cm}
+    \begin{center}
+      \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Physical_Sciences.pdf}\\
+      \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Neuro.pdf}\\
+      \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Liberal_Arts.pdf}
+    \end{center}
   \end{myblock}\vfill
+
 
   \begin{myblock}{References}
     \bibliographystyle{\includedir/bib/atlasBibStyleWoTitle}
@@ -119,7 +140,7 @@
     }
   \end{myblock}\vfill
 
-% end of right oclumn
+% end of right column
 }\end{minipage}\end{beamercolorbox}
 \end{column}
 
