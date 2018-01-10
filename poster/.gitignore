@@ -19,6 +19,8 @@
 *.1
 *.swp
 *.log
+*.dpth
+*.md5
 *Notes.bib
 
 # Directories to ignore

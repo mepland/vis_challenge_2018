@@ -11,7 +11,7 @@
 % \usepackage{array,booktabs,tabularx}
 % \newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
  
-% \newcommand{\figuresComm}{../../../figuresComm}
+\newcommand{\figures}{../outputs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % usepackages
@@ -53,12 +53,19 @@
 }\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{\Huge Title TBD}
+\title{\huge Interdisciplinary Connections: PhD Committees}
 \author{Matthew Epland}
 \institute[Duke]{Duke University}
 
 \newlength{\columnheight}
 \setlength{\columnheight}{80cm}
+
+% For exporting tikz picture as is drawn here
+% TODO only enable after making changes, it's a write 18 / --shell-escape security risk hack...
+% \usepackage{shellesc}
+% \usetikzlibrary{external}
+% \tikzexternalize[prefix=./tikzout/]
+
 
 \begin{document}
 
@@ -71,10 +78,14 @@
 \begin{minipage}{.98\textwidth}  % tweaks the width, makes a new \textwidth
 \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the height, width and textwidth simultaneously
 
-  \begin{myblock}{Block One}
+  \begin{myblock}{Methods}
     \begin{itemize}
-      \item TODO 1
+      \item Graph connections between academic organizations found in PhD committees
     \end{itemize}
+    \vspace{0.8cm}
+    \centering
+    \fbox{\includetikz{40cm}{edgeGen}}
+
   \end{myblock}\vfill
 
   \begin{myblock}{Block Two}
@@ -82,9 +93,6 @@
       \item TODO 2
     \end{itemize}
 
-\fbox{
-    \includetikz{40cm}{edgeGen}
-} % TODO For testing
 
   \end{myblock}\vfill
 

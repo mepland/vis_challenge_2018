@@ -1,7 +1,7 @@
 DOCNAME = vis_challenge_2018_poster-matthew_epland
 
 TEXENG = lualatex
-TEXFLAGS = --file-line-error
+TEXFLAGS = --file-line-error # --shell-escape
 
 BIBENG = bibtex
 BIBFLAGS =
