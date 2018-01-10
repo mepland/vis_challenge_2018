@@ -60,8 +60,9 @@
 \newlength{\columnheight}
 \setlength{\columnheight}{80cm}
 
-% For exporting tikz picture as is drawn here
-% TODO only enable after making changes, it's a write 18 / --shell-escape security risk hack...
+% For exporting tikz pictures as they is drawn in this document
+% NOTE: Only enable after making changes, it's a write 18 / --shell-escape security risk hack...
+% There is a bug that creates an .auxlock which you must delete before rerunning - doing that seems to fix things however
 % \usepackage{shellesc}
 % \usetikzlibrary{external}
 % \tikzexternalize[prefix=./tikzout/]

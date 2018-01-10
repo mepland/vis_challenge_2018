@@ -25,13 +25,6 @@
     scale=0.3,
     ]
 
-  \tikzstyle{curveArrow} = [draw, dashed,
-                            line width=1pt,
-                            line cap=round,
-                            scale=\textscale,
-                            -latex]
-
-
   \node[draw, inner sep=8pt, scale=0.28, text centered, rotate=90] at (-1.05,0) (comm) {PhD Committee $k$};
 
   \pgfmathsetmacro{\profx}{0}
@@ -43,8 +36,8 @@
   \node[squa] at (\profx,\profy) (topName) {Prof. Jane};
   \draw[-] (comm.south) -- (topName.west);
 
-  \node[ell] at (\subjectx,\profy+0.6*\subjectysep) (topNameOrg1) {Chemistry};
-  \node[ell] at (\subjectx,\profy-0.6*\subjectysep) (topNameOrg2) {Biochemistry};
+  \node[ell, fill=blue!10] at (\subjectx,\profy+0.6*\subjectysep) (topNameOrg1) {Chemistry};
+  \node[ell, fill=cyan!10] at (\subjectx,\profy-0.6*\subjectysep) (topNameOrg2) {Biochemistry};
   \draw[-] (topName.east) -- (topNameOrg1.west);
   \draw[-] (topName.east) -- (topNameOrg2.west);
 
@@ -53,9 +46,9 @@
   \node[squa] at (\profx,-\profy) (bottomName) {Prof. John};
   \draw[-] (comm.south) -- (bottomName.west);
 
-  \node[ell] at (\subjectx,-\profy+\subjectysep) (bottomNameOrg1) {Biology};
-  \node[ell] at (\subjectx,-\profy) (bottomNameOrg2) {Neurobiology};
-  \node[ell] at (\subjectx,-\profy-\subjectysep) (bottomNameOrg3) {Biochemistry};
+  \node[ell, fill=green!10] at (\subjectx,-\profy+\subjectysep) (bottomNameOrg1) {Biology};
+  \node[ell, fill=magenta!10] at (\subjectx,-\profy) (bottomNameOrg2) {Neurobiology};
+  \node[ell, fill=cyan!10] at (\subjectx,-\profy-\subjectysep) (bottomNameOrg3) {Biochemistry};
   \draw[-] (bottomName.east) -- (bottomNameOrg1.west);
   \draw[-] (bottomName.east) -- (bottomNameOrg2.west);
   \draw[-] (bottomName.east) -- (bottomNameOrg3.west);
@@ -67,11 +60,11 @@
   \pgfmathsetmacro{\comby}{-0.2}
   \pgfmathsetmacro{\combr}{1.45}
 
-  \node[ell] at ({\combx+\combr*cos(72*0+90)}, {\comby+\combr*sin(72*0+90)}) (comb-0) {Chemistry};
-  \node[ell] at ({\combx+\combr*cos(72*1+90)}, {\comby+\combr*sin(72*1+90)}) (comb-1) {Biochemistry};
-  \node[ell] at ({\combx+\combr*cos(72*2+90)}, {\comby+\combr*sin(72*2+90)}) (comb-2) {Biology};
-  \node[ell] at ({\combx+\combr*cos(72*3+90)}, {\comby+\combr*sin(72*3+90)}) (comb-3) {Neurobiology};
-  \node[ell] at ({\combx+\combr*cos(72*4+90)}, {\comby+\combr*sin(72*4+90)}) (comb-4) {Biochemistry};
+  \node[ell, fill=blue!10] at ({\combx+\combr*cos(72*0+90)}, {\comby+\combr*sin(72*0+90)}) (comb-0) {Chemistry};
+  \node[ell, fill=cyan!10] at ({\combx+\combr*cos(72*1+90)}, {\comby+\combr*sin(72*1+90)}) (comb-1) {Biochemistry};
+  \node[ell, fill=green!10] at ({\combx+\combr*cos(72*2+90)}, {\comby+\combr*sin(72*2+90)}) (comb-2) {Biology};
+  \node[ell, fill=magenta!10] at ({\combx+\combr*cos(72*3+90)}, {\comby+\combr*sin(72*3+90)}) (comb-3) {Neurobiology};
+  \node[ell, fill=cyan!10] at ({\combx+\combr*cos(72*4+90)}, {\comby+\combr*sin(72*4+90)}) (comb-4) {Biochemistry};
 
   \foreach \i in {0,...,4}
     \foreach \j in {\i,...,4}
@@ -80,24 +73,43 @@
 
   \node[bigArrow] at (9.7,0) (bigArrow2) {Graph};
 
-  \pgfmathsetmacro{\graphx}{11.25}
+  \pgfmathsetmacro{\weightOne}{0.75pt}
+  \pgfmathsetmacro{\weightTwo}{1.5pt}
+
+  \pgfmathsetmacro{\graphytop}{1}
+  \pgfmathsetmacro{\graphybottom}{-1.2}
 
 
-  \node[ell] at (\graphx,  1) (node-1) {Biochemistry};
-  \node[ell] at (\graphx, -1.2) (node-0) {Neurobiology};
+  \pgfmathsetmacro{\graphxleft}{11.25}
+
+  \node[ell, fill=cyan!10] at (\graphxleft, \graphytop) (node-1) {Biochemistry};
+  \node[ell, fill=magenta!10] at (\graphxleft, \graphybottom) (node-0) {Neurobiology};
 
   \path (comb-3) -- (comb-4) node (combEdge) [midway] {};
 
-  \draw[-, line width=2pt] (node-0) -- (node-1) node (graphEdge1) [midway] {};
+  \draw[-, line width=\weightTwo] (node-0) -- (node-1) node (graphEdge1) [midway] {};
   \node[xshift=6pt, rotate=90, scale=\textscale] at (graphEdge1) {$w=2$};
 
-  \draw[curveArrow] ($ (combEdge.center) + (0.5,-0.5) $) to [out=-48,in=-130] ($ (graphEdge1.center) + (-0.5,-0.5) $);
+  \draw[draw, dashed, line width=\weightOne, line cap=round, scale=\textscale, -latex] ($ (combEdge.center) + (0.5,-0.5) $) to [out=-48,in=-130] ($ (graphEdge1.center) + (-0.5,-0.5) $);
   \node[annot] at (9.35, -1.4) {$w_{\mathrm{edge}} \mathrel{+}= 1$};
 
 
-  \draw[-,inner sep=0pt,outer sep=0pt, line width=1pt,line cap=round] ($ (node-1) + (0,0.235) $) to [out=15,in=45,loop,min distance=30pt] ($ (node-1) + (0,0.235) $);
+  \draw[-,inner sep=0pt,outer sep=0pt, line width=\weightOne,line cap=round] ($ (node-1) + (0,0.235) $) to [out=15,in=45,loop,min distance=30pt] ($ (node-1) + (0,0.235) $);
   \node[xshift=4pt, yshift=12pt, rotate=34.5, scale=\textscale] at ($ (node-1) + (0,0.235) $) {$w=1$};
 
+
+  \pgfmathsetmacro{\graphxright}{13.5}
+
+  \node[ell, fill=blue!10] at (\graphxright, \graphytop) (node-3) {Chemistry};
+  \node[ell, fill=green!10] at (\graphxright, \graphybottom) (node-2) {Biology};
+
+  \draw[-, line width=\weightTwo] (node-1) -- (node-2);
+  \draw[-, line width=\weightTwo] (node-1) -- (node-3);
+
+  \draw[-, line width=\weightOne1pt] (node-0) -- (node-2);
+  \draw[-, line width=\weightOne] (node-0) -- (node-3);
+
+  \draw[-, line width=\weightOne] (node-2) -- (node-3);
 
 }}
 
