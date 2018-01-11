@@ -54,7 +54,7 @@
 }\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{\huge Exploring Interdisciplinary Connections in\\Duke PhD Committees}
+\title{\huge Exploring Interdisciplinary Connections in\\Duke Ph.D.\ Committees}
 \author{Matthew Epland}
 \institute[Duke]{Duke University}
 
@@ -81,23 +81,36 @@
 \begin{beamercolorbox}[center]{postercolumn}
 \begin{minipage}{.98\textwidth}  % tweaks the width, makes a new \textwidth
 \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the height, width and textwidth simultaneously
-
+  \vfill
   \begin{myblock}{Methods}
     \begin{itemize}
-      \item Graph connections between academic organizations found in PhD committees
-      \item TODO
-
+      \item Graph connections between academic organizations found in Duke Ph.D.\ committees
+      \begin{itemize}
+        \item For each committee, find all combinations of member's non-administrative appointments
+        \item For each combination, increase the graph's corresponding edge weight, $w$, by $1$
+      \end{itemize}
     \end{itemize}
-    \vspace{0.8cm}
+
+    \vspace{0.5cm}
+
     \begin{center}
       % \fbox{
       \includetikz{45cm}{edgeGen}
       % }
     \end{center}
+
+    \vspace{0.5cm}
+
+    \begin{itemize}
+      \item Find communities of nodes (organizations) in graph via the Louvain method \cite{louvain}
+      \begin{itemize}
+        \item Build up communities by optimizing the density of interior to exterior edges (modularity)
+      \end{itemize}
+    \end{itemize}
   \end{myblock}\vfill
 
 
-  \begin{myblock}{Academic Organization Graph}
+  \begin{myblock}{Academic Organizations Graph}
     \vspace{0.8cm}
     \begin{center}
       \includegraphics[width=\textwidth]{\figures/network_all_annotated.pdf}
@@ -108,7 +121,18 @@
   \begin{myblock}{Conclusions}
     \begin{itemize}
       \item TODO
-      \item Used \texttt{visJS2jupyter} \cite{visJS2jupyter} % TODO dummy citation for now just to compile, won't actually be on final poster
+      \item TODO
+      \item TODO
+      \item TODO
+    \end{itemize}
+  \end{myblock}\vfill
+
+
+  \begin{myblock}{Future Improvements}
+    \begin{itemize}
+      \item TODO
+      \item TODO
+      \item TODO
     \end{itemize}
   \end{myblock}\vfill
 
@@ -122,12 +146,15 @@
 \begin{beamercolorbox}[center]{postercolumn}
 \begin{minipage}{.98\textwidth}
 \parbox[t][\columnheight]{\textwidth}{
-
+  \vfill
   \begin{myblock}{Measuring Interdisciplinary Activity}
     \begin{itemize}
-      \item Compute ``Interdisciplinary Fraction'' as $w_{\mathrm{external\,edges}}~/~w_{\mathrm{all\,edges}}$
-      \item Slice graph by academic year to see changes over time
-      \item TODO
+      \item Compute ``Interdisciplinary Fraction'' $= w_{\text{external}} / \big(w_{\text{external}} + w_{\text{self}}\big)$
+      \item Bin graph by academic year to observe any changes over time\vphantom{$= w_{\text{external}} / \big(w_{\text{external}} + w_{\text{self}}\big)$}
+      \item Plot top 10 organizations by total weight for each community
+      \begin{itemize}
+        \item For satisfactory statistics require $w_{\text{total}} > 100$ per year, and have $\geq 3$ years 
+      \end{itemize}
     \end{itemize}
     \vspace{0.8cm}
     \begin{center}
@@ -138,7 +165,7 @@
   \end{myblock}\vfill
 
 
-  \begin{myblock}{References}
+  \begin{myblock}{References} % TODO if there is only one in the end, change to reference?
     \bibliographystyle{\includedir/bib/atlasBibStyleWoTitle}
     % {\scriptsize
     {\footnotesize
