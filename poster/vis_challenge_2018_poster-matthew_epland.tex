@@ -42,7 +42,7 @@
 \makeatletter\hypersetup{
     breaklinks, baseurl=http://, pdfborder=0 0 0, pdfpagemode=UseNone, pdfstartpage=1, bookmarksopen=false, bookmarksdepth=2, % to show sections and subsections
     pdfauthor      = {Matthew Epland}, %
-    pdftitle       = {Epland - Duke Visualization Challenge 2018: Poster}, % was including the subtitle as well and I wanted to shorten/tweak it....
+    pdftitle       = {Epland - Duke Visualization Challenge 2018: Poster}, % was including the subtitle as well and I wanted to shorten/tweak it...
     pdfsubject     = {},               %
     pdfkeywords    = {Duke Visualization Challenge 2018, Duke, Interdisciplinary, Network Analysis, Poster}
 }\makeatother
@@ -75,7 +75,7 @@
 \begin{beamercolorbox}[center]{postercolumn}
 \begin{minipage}{.98\textwidth}  % tweaks the width, makes a new \textwidth
 \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the height, width and textwidth simultaneously
-  \vfill
+%  \vfill % TODO add in depending on final block sizes
   \begin{myblock}{Methods}
     \begin{itemize}
       \item Graph connections between academic organizations found in Duke Ph.D.\ committees
@@ -141,7 +141,7 @@
 \begin{beamercolorbox}[center]{postercolumn}
 \begin{minipage}{.98\textwidth}
 \parbox[t][\columnheight]{\textwidth}{
-  \vfill
+%  \vfill % TODO add in depending on final block sizes
   \begin{myblock}{Measuring Interdisciplinary Activity}
     \begin{itemize}
       \item Compute ``Interdisciplinary Fraction'' $= w_{\text{external}} / \big(w_{\text{external}} + w_{\text{self}}\big)$
