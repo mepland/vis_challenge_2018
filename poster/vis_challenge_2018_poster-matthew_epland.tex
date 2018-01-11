@@ -4,12 +4,6 @@
 \usepackage[orientation=landscape,size=mepland3x3,scale=1.0,debug]{\includedir/poster/beamerposter}
 \mode<presentation>{\usepackage{beamerthememepland}}
 \newlength{\mylength} % need to declare here for use in beamerthememepland
-
-% used in old poster packages TODO delete later
-% \usepackage[utf8]{inputenc}
-% \usepackage[english]{babel} % want to remove but crashes..
-% \usepackage{array,booktabs,tabularx}
-% \newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
  
 \newcommand{\figures}{../outputs/plots}
 
@@ -105,6 +99,7 @@
       \item Find communities of nodes (organizations) in graph via the Louvain method \cite{louvain}
       \begin{itemize}
         \item Build up communities by optimizing the density of interior to exterior edges (modularity)
+% TODO if there is room at the end, might as well put a bullet in for the sprint_pos and cite if possible
       \end{itemize}
     \end{itemize}
   \end{myblock}\vfill
