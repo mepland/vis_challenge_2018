@@ -6,6 +6,8 @@
 \usetikzlibrary{arrows} % deprecated, should migrate away from o-latex, someday...
 \usetikzlibrary{calc}
 
+\usetikzlibrary{backgrounds}
+
 \tikzset{edgeGen/.pic={
 
   \pgfmathsetmacro{\textscale}{0.2}
@@ -73,43 +75,42 @@
 
   \node[bigArrow] at (9.7,0) (bigArrow2) {Graph};
 
-  \pgfmathsetmacro{\weightOne}{0.75pt}
-  \pgfmathsetmacro{\weightTwo}{1.5pt}
+
+  \pgfmathsetmacro{\edgethickness}{1.2pt}
 
   \pgfmathsetmacro{\graphytop}{1}
   \pgfmathsetmacro{\graphybottom}{-1.2}
 
-
   \pgfmathsetmacro{\graphxleft}{11.25}
+  \pgfmathsetmacro{\graphxright}{11.25+1+1.2}
+
 
   \node[ell, fill=cyan!10] at (\graphxleft, \graphytop) (node-1) {Biochemistry};
   \node[ell, fill=magenta!10] at (\graphxleft, \graphybottom) (node-0) {Neurobiology};
-
-  \path (comb-3) -- (comb-4) node (combEdge) [midway] {};
-
-  \draw[-, line width=\weightTwo] (node-0) -- (node-1) node (graphEdge1) [midway] {};
-  \node[xshift=6pt, rotate=90, scale=\textscale] at (graphEdge1) {$w=2$};
-
-  \draw[draw, dashed, line width=\weightOne, line cap=round, scale=\textscale, -latex] ($ (combEdge.center) + (0.5,-0.5) $) to [out=-48,in=-130] ($ (graphEdge1.center) + (-0.5,-0.5) $);
-  \node[annot] at (9.35, -1.4) {$w_{\mathrm{edge}} \mathrel{+}= 1$};
-
-
-  \draw[-,inner sep=0pt,outer sep=0pt, line width=\weightOne,line cap=round] ($ (node-1) + (0,0.235) $) to [out=15,in=45,loop,min distance=30pt] ($ (node-1) + (0,0.235) $);
-  \node[xshift=4pt, yshift=12pt, rotate=34.5, scale=\textscale] at ($ (node-1) + (0,0.235) $) {$w=1$};
-
-
-  \pgfmathsetmacro{\graphxright}{13.5}
-
   \node[ell, fill=blue!10] at (\graphxright, \graphytop) (node-3) {Chemistry};
   \node[ell, fill=green!10] at (\graphxright, \graphybottom) (node-2) {Biology};
 
-  \draw[-, line width=\weightTwo] (node-1) -- (node-2);
-  \draw[-, line width=\weightTwo] (node-1) -- (node-3);
+  \begin{scope}[on background layer]
+    \draw[black!25, -,inner sep=0pt,outer sep=0pt, line width=\edgethickness,line cap=round] ($ (node-1) + (0,0.235) $) to [out=15,in=45,loop,min distance=30pt] ($ (node-1) + (0,0.235) $);
 
-  \draw[-, line width=\weightOne1pt] (node-0) -- (node-2);
-  \draw[-, line width=\weightOne] (node-0) -- (node-3);
+    \draw[black, -, line width=\edgethickness] (node-0) -- (node-1) node (graphEdge1) [midway] {};
 
-  \draw[-, line width=\weightOne] (node-2) -- (node-3);
+    \draw[black!25, -, line width=\edgethickness] (node-0) -- (node-2);
+    \draw[black!25, -, line width=\edgethickness] (node-0) -- (node-3);
+
+    \draw[black, -, line width=\edgethickness] (node-1) -- (node-2);
+    \draw[black, -, line width=\edgethickness] (node-1) -- (node-3);
+  
+    \draw[black!25, -, line width=\edgethickness] (node-2) -- (node-3);
+  \end{scope}
+
+  \path (comb-3) -- (comb-4) node (combEdge) [midway] {};
+  \node[xshift=5pt, rotate=90, scale=\textscale] at (graphEdge1) {$w=2$};
+
+  \draw[dashed, line width=\edgethickness, line cap=round, scale=\textscale, -latex] ($ (combEdge.center) + (0.5,-0.5) $) to [out=-48,in=-130] ($ (graphEdge1.center) + (-0.5,-0.5) $);
+  \node[annot] at (9.35, -1.4) {$w_{\mathrm{edge}} \mathrel{+}= 1$};
+
+  \node[xshift=4pt, yshift=12pt, rotate=34.5, scale=\textscale] at ($ (node-1) + (0,0.235) $) {$w=1$};
 
 }}
 
