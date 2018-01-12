@@ -1,6 +1,6 @@
 \documentclass[notitlepage,aps,prd,nofootinbib]{revtex4-1}
   
-% \newcommand{\figuresComm}{../../../figuresComm}
+\newcommand{\figures}{../outputs/plots}
 \newcommand{\includedir}{../latex_files}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,6 +22,7 @@
 %\usepackage{ulem}
 %\usepackage{listings}
 \usepackage{overpic}
+\usepackage[section]{placeins}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Include commands, style, colors, and abbreviations
@@ -63,9 +64,25 @@ Abstract goes here.
 Intro.
 
 \section{Methods}
-Made network, interactivly displayed with \texttt{visJS2jupyter} \cite{visJS2jupyter}.
+Methods.
 
-\includegraphics[width=\textwidth]{../poster/tikzout/vis_challenge_2018_poster-matthew_epland-figure0.pdf}
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{../poster/tikzout/vis_challenge_2018_poster-matthew_epland-figure0.pdf}
+  \caption{Schematic representation of the method used to build the weighted academic organization graphs.}
+  \label{fig:method_schematic}
+\end{figure}
+
+\section{Results}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/network_all_annotated.pdf}
+  \caption{Academic organization graph for all years.}
+  \label{fig:graph_all_years}
+\end{figure}
+
+The academic organization graph for all years may also be viewed interactively online\footnote{\url{http://bl.ocks.org/mepland/raw/ee7d644c613d1ba18289f72d3f1b3456/}}, displayed with the \texttt{visJS2jupyter} \cite{visJS2jupyter} package.
 
 \section{Future Improvements}
 Improvements.
@@ -80,4 +97,123 @@ Results.
 \bibliography{\includedir/bib/bib.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\appendix*
+\section{Academic Organization Graphs by Year}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2013.pdf}
+  \caption{Academic organization graph for 2013.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2014.pdf}
+  \caption{Academic organization graph for 2014.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2015.pdf}
+  \caption{Academic organization graph for 2015.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2016.pdf}
+  \caption{Academic organization graph for 2016.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2017.pdf}
+  \caption{Academic organization graph for 2017.}
+  % \label{fig:}
+\end{figure}
+
+
+\appendix*
+\section{Interdisciplinary Fraction by Community}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/School_of_Medicine.pdf}
+  \caption{Interdisciplinary fraction vs year for the ``School of Medicine'' community.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Neuro.pdf}
+  \caption{Interdisciplinary fraction vs year for the Neuro community.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Physical_Sciences.pdf}
+  \caption{Interdisciplinary fraction vs year for the Physical Sciences community.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Social_Science_slash_Health,_Pro_Schools.pdf}
+  \caption{Interdisciplinary fraction vs year for the Social Science / Health, Pro Schools community.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Liberal_Arts.pdf}
+  \caption{Interdisciplinary fraction vs year for the Liberal Arts community.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Bio_slash_Evolution.pdf}
+  \caption{Interdisciplinary fraction vs year for the Bio / Evolution community.}
+  % \label{fig:}
+\end{figure}
+
+
+\appendix*
+\section{Interdisciplinary Fraction by School}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/schools/Trinity_College_of_Arts_and_Sciences.pdf}
+  \caption{Interdisciplinary fraction vs year for the Trinity College of Arts \& Sciences.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/schools/School_of_Medicine.pdf}
+  \caption{Interdisciplinary fraction vs year for the School of Medicine.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/schools/Institutes_and_Provosts_Academic_Units.pdf}
+  \caption{Interdisciplinary fraction vs year for the Institutes \& Provost's Academic Units.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/interdis_frac/schools/Other.pdf}
+  \caption{Interdisciplinary fraction vs year for the remaining schools and units.}
+  % \label{fig:}
+\end{figure}
+
 \end{document}
