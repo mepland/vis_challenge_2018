@@ -57,7 +57,8 @@
  \begin{actionenv}#2%
  \def\insertblocktitle{\centering#1}%
  \par%
- \usebeamertemplate{block begin}\leftskip=14pt\rightskip=14pt\vspace{30pt}} % edit whitespace under each heading
+ % \usebeamertemplate{block begin}\leftskip=14pt\rightskip=14pt\vspace{30pt}} % edit whitespace under each heading
+ \usebeamertemplate{block begin}\leftskip=14pt\rightskip=14pt\vspace{22pt}} % edit whitespace under each heading
  {\par\vspace{10pt}\usebeamertemplate{block end}
  \end{actionenv}}
 
@@ -153,5 +154,10 @@
 %Some beamer customizations:
 \setbeamertemplate{bibliography item}[text]
 \setbeamertemplate{caption}[numbered]{}% Number float-like environments
+
+\setbeamercolor{bibliography entry author}{fg=structure}
+%\setbeamercolor{bibliography entry title}{fg=structure}
+%\setbeamercolor{bibliography entry location}{fg=structure}
+%\setbeamercolor{bibliography entry note}{fg=structure}
 
 \mode<all>

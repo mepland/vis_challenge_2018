@@ -4,7 +4,7 @@
 \usepackage[orientation=landscape,size=mepland3x3,scale=1.0,debug]{\includedir/poster/beamerposter}
 \mode<presentation>{\usepackage{beamerthememepland}}
 \newlength{\mylength} % need to declare here for use in beamerthememepland
- 
+
 \newcommand{\figures}{../outputs/plots}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16,8 +16,8 @@
 \usepackage{verbatim} % verbatim text and comment environment
 \usepackage{lmodern} % allowing font sizes at arbitrary sizes
 \usepackage[free-standing-units]{siunitx} % units package, see https://www.ctan.org/pkg/siunitx
-\usepackage[absolute,overlay]{textpos} % for textblock* absolute positioning 
-\TPGrid{100}{100} % make our textpos grid 100 by 100 for easy positioning 
+\usepackage[absolute,overlay]{textpos} % for textblock* absolute positioning
+\TPGrid{100}{100} % make our textpos grid 100 by 100 for easy positioning
 % \TPGrid[20mm,20mm]{100}{100} % default mm grid
 %\usepackage[texcoord,grid,gridunit=mm,gridcolor=red!10,subgridcolor=green!10]{eso-pic} % layout grid, mm
 %\usepackage{tcolorbox}
@@ -68,19 +68,19 @@
 \begin{document}
 
 \begin{frame}
-\vspace{2.5cm} % edit at the end
+\vspace{1.7cm} % edit at the end
 \begin{columns}
 % left column
 \begin{column}{.57\textwidth}
 \begin{beamercolorbox}[center]{postercolumn}
 \begin{minipage}{.98\textwidth}  % tweaks the width, makes a new \textwidth
 \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the height, width and textwidth simultaneously
-%  \vfill % TODO add in depending on final block sizes
+
   \begin{myblock}{Methods}
     \begin{itemize}
       \item Graph connections between academic organizations found in Duke Ph.D.\ committees
       \begin{itemize}
-        \item For each committee, find all combinations of member's non-administrative appointments
+        \item For each committee, find all combinations of committee member's non-administrative appointments
         \item For each combination, increase the graph's corresponding edge weight, $w$, by $1$
       \end{itemize}
     \end{itemize}
@@ -98,8 +98,7 @@
     \begin{itemize}
       \item Find communities of nodes (organizations) in graph via the Louvain method \cite{louvain}
       \begin{itemize}
-        \item Build up communities by optimizing the density of interior to exterior edges (modularity)
-% TODO if there is room at the end, might as well put a bullet in for the sprint_pos and cite if possible
+        \item Construct communities by optimizing the density of interior to exterior edges (modularity)
       \end{itemize}
     \end{itemize}
   \end{myblock}\vfill
@@ -113,21 +112,32 @@
   \end{myblock}\vfill
 
 
-  \begin{myblock}{Conclusions}
+  \begin{myblock}{Conclusions}% TODO
     \begin{itemize}
-      \item TODO
-      \item TODO
-      \item TODO
-      \item TODO
+      \item \textbf{Identified communities of closely connected academic organizations at Duke}
+      \begin{itemize}
+        \item Most as expected, but with interesting Neuro cluster, and insular Biology / Evolutionary Anthropology paring
+      \end{itemize}
+      \item \textbf{Measured interdisciplinary activity via  organization's external edge weights }
+      \begin{itemize}
+        \item Most large organizations in the Physical Sciences and Neuro clusters where steady at $\sim90-95\%$
+        \begin{itemize}
+          \item Excluding noticeably lower Physics, Psychology and Neuroscience, and Philosophy
+        \end{itemize}
+        \item As a community the Liberal Arts where lower at $\sim75-90\%$, but suffered from low statistics
+      \end{itemize}
     \end{itemize}
   \end{myblock}\vfill
 
 
-  \begin{myblock}{Future Improvements}
+  \begin{myblock}{Potential Future Improvements}% TODO
     \begin{itemize}
-      \item TODO
-      \item TODO
-      \item TODO
+      \item Non-Ph.D.\ granting orgs have low statistics and artificially high interdisciplinary fractions
+      \begin{itemize}
+        \item Could create a similar graph from publication author lists to better include institutes \& centers
+        \item Collect data on other graduate degrees (M.D.\, J.D., $\ldots$) to improve professional school statistics
+      \end{itemize}
+      \item Try different weighting schemes to isolate secondary appts from interdisciplinary committees
     \end{itemize}
   \end{myblock}\vfill
 
@@ -141,26 +151,29 @@
 \begin{beamercolorbox}[center]{postercolumn}
 \begin{minipage}{.98\textwidth}
 \parbox[t][\columnheight]{\textwidth}{
-%  \vfill % TODO add in depending on final block sizes
   \begin{myblock}{Measuring Interdisciplinary Activity}
     \begin{itemize}
       \item Compute ``Interdisciplinary Fraction'' $= w_{\text{external}} / \big(w_{\text{external}} + w_{\text{self}}\big)$
       \item Bin graph by academic year to observe any changes over time\vphantom{$= w_{\text{external}} / \big(w_{\text{external}} + w_{\text{self}}\big)$}
-      \item Plot top 10 organizations by total weight for each community
+      \item Plot the top 10 organizations by total weight for each community
       \begin{itemize}
-        \item For satisfactory statistics require $w_{\text{total}} > 100$ per year, and have $\geq 3$ years 
+        \item For satisfactory statistics require $w_{\text{total}} > 100$ per year, for $\geq 3$ years
       \end{itemize}
     \end{itemize}
     \vspace{0.8cm}
     \begin{center}
-      \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Physical_Sciences.pdf}\\
-      \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Neuro.pdf}\\
+      \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Physical_Sciences.pdf}
+      \vspace{0.41cm}
+      \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Neuro.pdf}
+      \vspace{0.41cm}
       \includegraphics[width=\textwidth]{\figures/interdis_frac/communities/Liberal_Arts.pdf}
     \end{center}
   \end{myblock}\vfill
 
 
-  \begin{myblock}{References} % TODO if there is only one in the end, change to reference?
+  \nocite{networkx}
+
+  \begin{myblock}{References}
     \bibliographystyle{\includedir/bib/atlasBibStyleWoTitle}
     % {\scriptsize
     {\footnotesize

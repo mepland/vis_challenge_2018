@@ -26,6 +26,21 @@
 % 1.01 - bugfixed size handling
 % 1.00 - first beamerposter release
 %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% mepland
+% citation and href links auto-color
+\let\oldcite=\cite
+\renewcommand{\cite}[1]{\textcolor{Blue Devil Blue}{\oldcite{#1}}}
+
+% \let\oldhref=\href
+% \renewcommand{\href}[2]{\textcolor{Blue Devil Blue}{\oldhref{#1}{#2}}}
+
+% \let\oldurl=\url
+% \renewcommand{\url}[2]{\textcolor{Blue Devil Blue}{\oldurl{#1}{#2}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \def\beamerposter@name{beamerposter}
 \def\beamerposter@version{1.10}
 \def\beamerposter@date{2009/09/02}
