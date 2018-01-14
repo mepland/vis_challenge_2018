@@ -6,7 +6,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % usepackages
 \usepackage{amsmath,amssymb,bbm}
-\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage[protrusion=true,expansion=true]{microtype} % make text fow nice...
 \usepackage{verbatim} % verbatim text and comment environment
@@ -30,6 +29,8 @@
 \input{\includedir/paper/revtex_style.tex} % style setup
 % \input{\includedir/latex/abbreviations.tex}
 
+\usepackage[colorlinks=true, urlcolor={Blue Devil Blue}, linkcolor=black, citecolor=black, filecolor=black]{hyperref}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % load tikz pictures
 \input{\includedir/edgeGen.tex}
@@ -39,51 +40,75 @@
 \makeatletter\hypersetup{
     breaklinks, baseurl=http://, pdfborder=0 0 0, pdfpagemode=UseNone, pdfstartpage=1, bookmarksopen=false, bookmarksdepth=2, % to show sections and subsections
     pdfauthor      = {Matthew Epland}, %
-    pdftitle       = {Epland - Duke Visualization Challenge 2018: Methods}, % was including the subtitle as well and I wanted to shorten/tweak it...
+    pdftitle       = {Epland - 2018 Scholars@Duke Visualization Challenge: Methods}, % was including the subtitle as well and I wanted to shorten/tweak it...
     pdfsubject     = {},               %
-    pdfkeywords    = {Duke Visualization Challenge 2018, Duke, Interdisciplinary, Network Analysis, Methods}
+    pdfkeywords    = {2018 Scholars@Duke Visualization Challenge, 2018, Duke, Interdisciplinary, Network Analysis, Methods}
 }\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\title{Exploring Interdisciplinary Connections in Duke Ph.D.\ Committees\\Duke Visualization Challenge 2018}
+\title{Exploring Interdisciplinary Connections in Duke Ph.D.\ Committees\\2018 Scholars@Duke Visualization Challenge}
 \author{Matthew\,\,Epland}
-% \author{Matthew Epland}
-\affiliation{Department of Physics, Duke University, Durham, NC 27707}
-% \date{\today}
+\affiliation{Duke University, Durham, NC 27707}
 \date{January 22, 2018}
 
-
 \begin{abstract}
-Abstract goes here.
+Abstract goes here.%TODO needed in plain text for submission, might not include in final paper
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-Intro.
+This submission to the \href{https://rc.duke.edu/scholars-vis-challenge-2018/}{2018 Scholars@Duke Visualization Challenge} explored the nature of interdisciplinary research at Duke by studying the connections found in Ph.D.\ committees for the academic years of 2013--2017. By combining the committee membership data with the faculty appointments directory, connections between different academic organizations were created and turned into an undirected, weighted graph. From this graph communities of closely connected academic organizations were found via the Louvain method, and the level of interdisciplinary activity of each organization was measured by comparing the relative weights of their external and self connections.
 
 \section{Methods}
-Methods.
+\subsection{Constructing the Academic Organizations Graph}
+Individual Ph.D.\ committees were identified in the \path{dissertation_committees_2012-2017.xlsx} dataset provided by the Graduate School by computing a unique student/committee ID\footnote{\texttt{\{Student random ID\}\_\{Degree Nbr\}\_\{Compl Term\}\_\{Acad Org\}}}. Incomplete and potentially corrupted committees\footnote{Incomplete committees having less than 4 members and \texttt{1838\_2\_1420\_ELEC\&CMP}} were removed. Using the \path{ScholarsAtDuke_Faculty_October2017.xlsx} dataset provided by Scholars@Duke, committee members were matched to faculty appointments via their Duke unique ID numbers (DUID). At Duke faculty can hold one primary appointment and multiple secondary or joint appointments in other academic organizations\footnote{Administrative appointments and organizations were removed as they did not add to the study of interdisciplinary connections between academic organizations. Many organizational unit numbers were merged to clean the data. Additionally similar, but formally distinct, organizations were merged by hand in order to simplify the number of nodes --- in particular the numerous Medical School subdisciplines.}. Each time a faculty member appeared on a committee they were replaced by all of the academic organizations where they held appointments. From this committee level list of organizations, including duplicates, all possible combinations of two organizations were found. Each combination was saved, along with the degree conferred date, to a list of edges. The final academic organizations graph could then be constructed edge-by-edge, increasing the weight $w$ of a particular edges by $1$ each time it appeared in the list. A schematic representation of this process is provided in Figure~\ref{fig:method_schematic}. The graph building code was written in \texttt{python} using \texttt{pandas} \cite{pandas} for data management and \texttt{networkx} \cite{networkx} for graph operations.
 
 % \vspace{0.15cm}
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{../poster/tikzout/vis_challenge_2018_poster-matthew_epland-figure0.pdf}
-  \caption{Schematic representation of the method used to build the weighted academic organization graphs.}
+  \caption{Schematic representation of the method used to build the weighted academic organizations graph. Two members from a single committee are illustrated for example, but the method is applied to all committees and all members in practice.}
   \label{fig:method_schematic}
 \end{figure}
 
-\section{Results}
+\subsection{Finding Communities}
+The academic organizations graph naturally contains sub-groups, or communities, of related disciplines, such as the Physical Sciences or Liberal Arts. These communities can be constructed algorithmically via the Louvain method \cite{louvain} which optimizes the graph's modularity, a measure of the density of interior to exterior edges of the component communities. The modularity $Q$ of graph $G$ can be defined as in (\ref{eq:modularity}) where $w_{ij}$ is the edge weight between organization nodes $i$ and $j$, $W_{i}$ is the sum of edge weights of node $i$, $W_{\mathrm{G}}$ is the total edge weight of the graph, and $c_{i}$ is the community of node $i$.
 
+\begin{equation} \label{eq:modularity}
+Q\left(G\right) = \frac{1}{2 W_{\mathrm{G}}} \sum_{ij \in G} \bigg(w_{ij} - \frac{W_{i} W_{j}}{2 W_{\mathrm{G}}}\bigg) \delta\left(c_{i},\,c_{j}\right)
+\end{equation}
+
+In this work the Louvain method was implemented via the \texttt{python-louvain} package \cite{python-louvain} with the resolution parameter\footnote{A resolution of $1$ corresponds to the standard Louvain method, while diverging from $1$ favors communities of different sizes. Other values where tested, but the best results were obtained with a resolution of $1$.} set at the default value of $1$.
+
+
+\subsection{Measuring Interdisciplinary Activity}
+To measure the interdisciplinary activity of each academic organization a straightforward interdisciplinary fraction $f$ of external and self connections was utilized (\ref{eq:intdisfrac}). Here $w_{\text{external}}$ is the sum of external edge weights of an organization's node, while $w_{\text{self}}$ is the weight of the edge from the node to itself. Binning the academic organizations graph by academic year\footnote{With bin edges: 2012--5--1, 2013--8--26, 2014--8--25, 2015--8--24, 2016--8--29, 2017--10--1} it is possible to see how $f$ changes for an organization over time.
+
+\begin{equation} \label{eq:intdisfrac}
+f = w_{\text{external}} / \big(w_{\text{external}} + w_{\text{self}}\big)
+\end{equation}
+
+$f$ works well for Ph.D.\ granting organizations with good statistics, but frequently breaks down with a value of $f=1.0$ for non-Ph.D.\ granting organizations as they do not have multiple faculty members sitting together on their own Ph.D.\ committees. To help remove such cases from consideration it is required that $w_{\text{total}} = w_{\text{external}} + w_{\text{self}} > 100$ per year, and that an organization have $\geq 3$ such years before being displayed.
+
+
+\section{Results}
+\subsection{Academic Organizations Graph}
 % \vspace{0.15cm}
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{\figures/network_all_annotated.pdf}
-  \caption{Academic organization graph for all years.}
+  \caption{Academic organizations graph for all years.}
   \label{fig:graph_all_years}
 \end{figure}
 
 % TODO make sure url is correct in the end!
-The academic organization graph for all years may also be viewed interactively online\footnote{\url{http://bl.ocks.org/mepland/raw/ee7d644c613d1ba18289f72d3f1b3456/}}, displayed with the \texttt{visJS2jupyter} \cite{visJS2jupyter} package.
+The academic organizations graph for all years may also be viewed interactively online\footnote{\url{http://bl.ocks.org/mepland/raw/ee7d644c613d1ba18289f72d3f1b3456/}}, displayed with the \texttt{visJS2jupyter} \cite{visJS2jupyter} package.
+
+\subsection{Communities}
+
+\subsection{Interdisciplinary Activity}
+
+% TODO reference appendix plots, tables!
 
 \section{Future Improvements}
 Improvements.
@@ -121,7 +146,7 @@ Results.
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{\figures/community_members/community_2_Physical_Sciences.pdf}
   \caption{Members of the Physical Sciences Louvain community.}
-  % \label{fig:}
+  \label{fig:f_community_physical_sciences}
 \end{figure}
 
 % \vspace{0.15cm}
@@ -147,40 +172,40 @@ Results.
 
 
 \appendix*
-\section{Academic Organization Graphs by Year}
+\section{Academic Organizations Graphs by Year}
 
 % \vspace{0.15cm}
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2013.pdf}
-  \caption{Academic organization graph for 2013.}
+  \caption{Academic organizations graph for 2013.}
   % \label{fig:}
 \end{figure}
 
 % \vspace{0.15cm}
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2014.pdf}
-  \caption{Academic organization graph for 2014.}
+  \caption{Academic organizations graph for 2014.}
   % \label{fig:}
 \end{figure}
 
 % \vspace{0.15cm}
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2015.pdf}
-  \caption{Academic organization graph for 2015.}
+  \caption{Academic organizations graph for 2015.}
   % \label{fig:}
 \end{figure}
 
 % \vspace{0.15cm}
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2016.pdf}
-  \caption{Academic organization graph for 2016.}
+  \caption{Academic organizations graph for 2016.}
   % \label{fig:}
 \end{figure}
 
 % \vspace{0.15cm}
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2017.pdf}
-  \caption{Academic organization graph for 2017.}
+  \caption{Academic organizations graph for 2017.}
   % \label{fig:}
 \end{figure}
 
