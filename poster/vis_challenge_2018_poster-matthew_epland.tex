@@ -96,7 +96,7 @@
     \vspace{0.5cm}
 
     \begin{itemize}
-      \item Find communities of nodes (organizations) in graph via the Louvain method \cite{louvain}
+      \item Find communities of organizations (nodes) in graph via the Louvain method \cite{louvain}
       \begin{itemize}
         \item Construct communities by optimizing the density of interior to exterior edges (modularity)
       \end{itemize}
@@ -118,13 +118,13 @@
       \begin{itemize}
         \item Most as expected, but with interesting Neuro cluster, and insular Biology / Evolutionary Anthropology paring
       \end{itemize}
-      \item \textbf{Measured interdisciplinary activity via  organization's external edge weights }
+      \item \textbf{Measured interdisciplinary activity via  organization's external/total edge weights }
       \begin{itemize}
         \item Most large organizations in the Physical Sciences and Neuro clusters were steady at $f \approx 90-95\%$
         \begin{itemize}
-          \item Excluding the noticeably lower Physics, Psychology and Neuroscience, and Philosophy departments
+          \item Excluding the noticeably lower \& more variable Physics, Psychology and Neuroscience, and Philosophy departments
         \end{itemize}
-        \item As a community the Liberal Arts were lower at $f \approx 75-90\%$, but suffered from low statistics
+        \item As a community the Liberal Arts were lower at $f \approx 75-90\%$, but suffered from poor statistics
       \end{itemize}
     \end{itemize}
   \end{myblock}\vfill
@@ -134,8 +134,8 @@
     \begin{itemize}
       \item Non-Ph.D.\ granting orgs have low statistics and artificially high interdisciplinary fractions
       \begin{itemize}
+        \item Collect data on other graduate degrees (M.D.\, J.D., \ldots) to improve professional school statistics
         \item Could create a similar graph from publication author lists to better include institutes \& centers
-        \item Collect data on other graduate degrees (M.D.\, J.D., $\ldots$) to improve professional school statistics
       \end{itemize}
       \item Try different weighting schemes to isolate secondary appts from interdisciplinary committees
     \end{itemize}
