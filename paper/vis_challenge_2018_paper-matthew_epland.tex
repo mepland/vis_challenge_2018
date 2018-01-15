@@ -10,6 +10,7 @@
 \usepackage[protrusion=true,expansion=true]{microtype} % make text fow nice...
 \usepackage{verbatim} % verbatim text and comment environment
 \usepackage{lmodern} % allowing font sizes at arbitrary sizes
+\usepackage{appendix}
 \usepackage[free-standing-units]{siunitx} % units package, see https://www.ctan.org/pkg/siunitx
 \usepackage[absolute,overlay]{textpos} % for textblock* absolute positioning 
 \TPGrid{100}{100} % make our textpos grid 100 by 100 for easy positioning 
@@ -79,7 +80,7 @@ The academic organizations graph naturally contains sub-groups, or communities, 
 Q\left(G\right) = \frac{1}{2 W_{\mathrm{G}}} \sum_{ij \in G} \bigg(w_{ij} - \frac{W_{i} W_{j}}{2 W_{\mathrm{G}}}\bigg) \delta\left(c_{i},\,c_{j}\right)
 \end{equation}
 
-In this work the Louvain method was implemented via the \texttt{python-louvain} package \cite{python-louvain} with the resolution parameter\footnote{A resolution of $1$ corresponds to the standard Louvain method, while diverging from $1$ favors communities of different sizes. Other values where tested, but the best results were obtained with a resolution of $1$.} set at the default value of $1$.
+In this work the Louvain method was implemented via the \texttt{python-louvain} package \cite{python-louvain} with the resolution parameter\footnote{A resolution of $1$ corresponds to the standard Louvain method, while diverging from $1$ favors communities of different sizes. Other values were tested, but the best results were obtained with a resolution of $1$.} set at the default value of $1$.
 
 
 \subsection{Measuring Interdisciplinary Activity}
@@ -94,17 +95,22 @@ $f$ works well for Ph.D.\ granting organizations with good statistics, but frequ
 
 \section{Results}
 \subsection{Academic Organizations Graph}
-% \vspace{0.15cm}
+
+In addition to being the base object for later analysis, the academic organizations graph for all years, Figure~\ref{fig:graph_all_years}, provides a useful high-level view of the interdisciplinary networks at Duke. At a glance one can see how tightly linked organizations form the core of communities with smaller organizations on the periphery, and the relative separation between the science and medical communities and the liberal arts. The respective graphs for each academic year may be found in Appendix~\ref{appendix:graphs_by_year}.
+
 \begin{figure}[!htb]\centering
   \includegraphics[width=\textwidth]{\figures/network_all_annotated.pdf}
   \caption{Academic organizations graph for all years.}
   \label{fig:graph_all_years}
 \end{figure}
 
+The graph for all years may also be viewed \href{TODO}{interactively online}\footnote{\url{http://bl.ocks.org/mepland/raw/ee7d644c613d1ba18289f72d3f1b3456/}}, displayed with the \texttt{visJS2jupyter} package \cite{visJS2jupyter}. There additional details on each node and edge may be viewed by hovering over them, and the nodes may be dragged into new positions to better examine certain areas.
 % TODO make sure url is correct in the end!
-The academic organizations graph for all years may also be viewed interactively online\footnote{\url{http://bl.ocks.org/mepland/raw/ee7d644c613d1ba18289f72d3f1b3456/}}, displayed with the \texttt{visJS2jupyter} \cite{visJS2jupyter} package.
 
 \subsection{Communities}
+When run on the academic organizations graph for all years, the Louvain method found 6 communities of varying sizes. Each community was then named based on its constituent organizations; ``School of Medicine'', Neuro, Physical Sciences, ``Social Science / Health, Pro Schools'', Liberal Arts, Bio / Evolution. See Appendix~\ref{appendix:community_members} for a complete listing of organizations in each community.
+
+% TODO add more...
 
 \subsection{Interdisciplinary Activity}
 
@@ -125,8 +131,50 @@ Results.
 \newpage % TODO hard coded!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\appendix*
+\begin{appendices}
+
+
+\section{Academic Organizations Graphs by Year}
+\label{appendix:graphs_by_year}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2013.pdf}
+  \caption{Academic organizations graph for 2013.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2014.pdf}
+  \caption{Academic organizations graph for 2014.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2015.pdf}
+  \caption{Academic organizations graph for 2015.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2016.pdf}
+  \caption{Academic organizations graph for 2016.}
+  % \label{fig:}
+\end{figure}
+
+% \vspace{0.15cm}
+\begin{figure}[!htb]\centering
+  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2017.pdf}
+  \caption{Academic organizations graph for 2017.}
+  % \label{fig:}
+\end{figure}
+
+
 \section{Louvain Community Members}
+\label{appendix:community_members}
 
 % \vspace{0.15cm}
 \begin{figure}[!htb]\centering
@@ -171,46 +219,6 @@ Results.
 \end{figure}
 
 
-\appendix*
-\section{Academic Organizations Graphs by Year}
-
-% \vspace{0.15cm}
-\begin{figure}[!htb]\centering
-  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2013.pdf}
-  \caption{Academic organizations graph for 2013.}
-  % \label{fig:}
-\end{figure}
-
-% \vspace{0.15cm}
-\begin{figure}[!htb]\centering
-  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2014.pdf}
-  \caption{Academic organizations graph for 2014.}
-  % \label{fig:}
-\end{figure}
-
-% \vspace{0.15cm}
-\begin{figure}[!htb]\centering
-  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2015.pdf}
-  \caption{Academic organizations graph for 2015.}
-  % \label{fig:}
-\end{figure}
-
-% \vspace{0.15cm}
-\begin{figure}[!htb]\centering
-  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2016.pdf}
-  \caption{Academic organizations graph for 2016.}
-  % \label{fig:}
-\end{figure}
-
-% \vspace{0.15cm}
-\begin{figure}[!htb]\centering
-  \includegraphics[width=\textwidth]{\figures/time_binned_networks/network_2017.pdf}
-  \caption{Academic organizations graph for 2017.}
-  % \label{fig:}
-\end{figure}
-
-
-\appendix*
 \section{Interdisciplinary Fraction by Community}
 
 % \vspace{0.15cm}
@@ -256,7 +264,6 @@ Results.
 \end{figure}
 
 
-\appendix*
 \section{Interdisciplinary Fraction by School}
 
 % \vspace{0.15cm}
@@ -287,4 +294,5 @@ Results.
   % \label{fig:}
 \end{figure}
 
+\end{appendices}
 \end{document}
