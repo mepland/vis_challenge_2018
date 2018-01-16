@@ -7,4 +7,4 @@ python_louvain
 visJS2jupyter
 
 # need networkx>2.0 to use the random_state parameter of spring_layout. The commit below from the master should work. Update to next released tag when possible
-git+git@github.com:networkx/networkx.git@c81064572421a4b00160297d234cf06d070c4b92#egg=networkx
+git://git+git@github.com:networkx/networkx.git@c81064572421a4b00160297d234cf06d070c4b92#egg=networkx
