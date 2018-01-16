@@ -12,7 +12,10 @@ Please see the included poster and paper for further details.
 An interactive version of the academic organizations graph for all years may also be viewed online at [http://bl.ocks.org/mepland/raw/598590f30f49b17dc76ea4ed74695252](http://bl.ocks.org/mepland/raw/598590f30f49b17dc76ea4ed74695252)  
 
 ## Installing Dependencies
+It is recommended to work in a `virtualenv` to avoid clashes with other installed software. A useful extension for this purpose is [`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/). Follow the instructions in the documentation to install and initialize wrapper before continuing.  
+
 ```bash
+mkvirtualenv newenv
 pip install -r requirements.txt
 jupyter nbextension enable --py widgetsnbextension
 ```
