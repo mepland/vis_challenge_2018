@@ -13,19 +13,14 @@ An interactive version of the academic organizations graph for all years may als
 
 ## Installing Dependencies
 ```bash
-pip install pandas
-pip install matplotlib
-pip install jupyter
+pip install -r requirements.txt
 jupyter nbextension enable --py widgetsnbextension
-networkx
-pip install visJS2jupyter
-pip install python-louvain
 ```
 
 ### Installing networkx from master
-In order to use the new [random\_state](https://github.com/networkx/networkx/blob/a8a51d4763b01c034349fbc752713f47c637a81f/networkx/drawing/layout.py#L294) parameter of `spring_layout` you must install [`networkx`](https://github.com/networkx/networkx) from the master as it is included in version 2.0. Do this before installing visJS2jupyter and python-louvain.  
+In order to use the new QOL [random\_state](https://github.com/networkx/networkx/blob/a8a51d4763b01c034349fbc752713f47c637a81f/networkx/drawing/layout.py#L294) parameter of `spring_layout` you must install [`networkx`](https://github.com/networkx/networkx) from the master as it is not included in the current version 2.0. The `requirements.txt` file will try to install a known working commit, but you are welcome to install directly from master (see below) or look for a new version 2.x tag.  
 ```bash
-cd /where/you/would/like/to/install
+cd /where/you/would/like/to/install/networkx
 git clone git@github.com:networkx/networkx.git
 cd networkx
 pip install -e .
