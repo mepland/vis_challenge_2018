@@ -9,7 +9,7 @@ start_all_time = datetime.now()
 
 ################################################################################################################
 ################################################################################################################
-# Set variables
+# Set global variables
 
 committee_path = '../data/ORIGIN-GRADUATE_SCHOOL/dissertation_committees_2012-2017.xlsx'
 faculty_path = '../data/ORIGIN-SCHOLARSATDUKE/ScholarsAtDuke_Faculty_October2017.xlsx'
@@ -55,7 +55,7 @@ def make_path(path):
         os.makedirs(path)
     except OSError:
         if not os.path.isdir(path):
-            raise Exception('Problem creating output dir %s !!!\nA file with the same name probably already exists, please fix the conflict and run again.' % output_path)
+            raise Exception('Problem creating output dir %s !!!\nA file with the same name probably already exists, please fix the conflict and run again.' % path)
 # end def for make_path()
 
 ########################################################
@@ -69,7 +69,6 @@ def create_StudentIDFixed(StudentRandomID, DegreeNbr, ComplTerm, AcadOrg):
 ########################################################
 # Define a function to combine the faculty names
 def combine_faculty_name(first, middle, last):
-
     first = first.encode('utf-8').replace(' ', '')
     middle = middle.encode('utf-8').replace(' ', '')
     last = last.encode('utf-8').replace(' ', '')
@@ -99,26 +98,29 @@ df_cm = pd.read_excel(committee_path) # , sheetname='Sheet1'
 # clean committee data
 
 # create fixed / random unique student ID
+# note StudentIDFixed is really a unique ID for each committee, since it depends on Degree Nbr
+# keep this in mind if seeing student / StudentIDFixed below is confusing - they both really are committees
 df_cm['StudentIDFixed'] = df_cm.apply(lambda row: create_StudentIDFixed(row['student random ID'], row['Degree Nbr'], row['Compl Term'], row['Acad Org']), axis=1)
 
 # drop otherwise unwanted / incorrect records
+# note: the committee dataset only has GRAD / PHD, this is just to be safe
 df_cm = df_cm.drop(df_cm[df_cm.Career != "GRAD"].index)
 df_cm = df_cm.drop(df_cm[df_cm.Degree != "PHD"].index)
 
-# drop any incomplete committees
-students_to_remove = ["1838_2_1420_ELEC&CMP"] # has 10 members... likely two committees, just drop via hard coding
+# drop any incomplete committees (<4 members)
+students_to_remove = ["1838_2_1420_ELEC&CMP"] # 1838_2_1420_ELEC&CMP has 10 members... likely was really two committees that somehow were merged, just drop via hard coding
 for student in df_cm.StudentIDFixed.unique():
     df_cm_student = df_cm[(df_cm.StudentIDFixed == student)]
     num_members = len(df_cm_student['Advisor Duke UID'].unique())
     if num_members < 4:
         students_to_remove.append(student)
         if debug:
-            print "WARNING student %s only has %d members, dropping this student / committee" % (student, num_members)
+            print "INFO student %s only has %d members, dropping this student / committee" % (student, num_members)
             print df_cm_student
 
 df_cm = df_cm.drop(df_cm[df_cm.StudentIDFixed.isin(students_to_remove)].index)
 
-# clean date
+# format the date
 df_cm['Confer Dt'] = pd.to_datetime(df_cm['Confer Dt'])
 df_cm['Date'] = df_cm['Confer Dt'].dt.strftime('%Y-%m-%d')
 
@@ -192,7 +194,7 @@ df_fac = df_fac.drop(df_fac[~df_fac.DUID.isin(df_cm.AdvisorDUID.unique())].index
 # drop non-curricular organizational units
 df_fac = df_fac.drop(df_fac[df_fac.ORGANIZATIONAL_UNIT.isin([50000280,50719999,50974566,50000387,50000388,50536159,50450124,50815429,50000642,50000300,50000761,50000844,50000845,51032158,50956932,50616932,50000608,50405998])].index)
 
-# merge related units
+# merge related organizational units
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000414], 50000403, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000472, 50896130, 50896131, 50896138, 50896140], 50000471, True)
 df_fac['ORGANIZATIONAL_UNIT'].replace([50000518], 50000517, True)
@@ -284,7 +286,7 @@ if debug:
 
     print "Number of unique faculty %d" % (len(df_fac.DUID.unique()))
 
-if debug and not primary_only: # when only selecting P appointments, all of fac only have 1 row and it prints everyone...
+if debug and not primary_only: # when only selecting P appointments, all of faculty only have 1 row and it just prints everyone...
     faculty_appointment_counts = df_fac['DUID'].value_counts()
     max_faculty_appointment_count = faculty_appointment_counts.max()
 
@@ -298,6 +300,7 @@ if debug and not primary_only: # when only selecting P appointments, all of fac 
         print df_fac_mode
         print ""
 
+# note: "Listing all org units by name" and "Listing all org units by number" are extremely useful for deciding how to merge organizations, and then testing the merges
 if debug:
     print "\nListing all org units by name"
     for school_name in df_fac.SCHOOL_NAME.unique():
@@ -333,7 +336,7 @@ if debug:
             print "%d | %s | %s" % (org, school_names[0], org_dis_names[0])
 
 if debug and False: # can't really fix these, don't have time to try to match by name...
-    print "Find committee members not in faculty list"
+    print "Finding committee members not in faculty list"
     df_cm_not_in_fac = df_cm[~df_cm.AdvisorDUID.isin(df_fac.DUID.unique())]
     df_cm_not_in_fac = df_cm_not_in_fac[['AcadOrg', 'AdvisorDUID', 'AdvisorName']].drop_duplicates()
 
@@ -345,14 +348,14 @@ if debug and False: # can't really fix these, don't have time to try to match by
         print "No missing faculty"
 
 ########################################################
-# create lookup df to match ORGANIZATIONAL_UNIT to the human readable ORG_DISPLAY_NAME
+# create lookup df to match ORGANIZATIONAL_UNIT int to the human readable ORG_DISPLAY_NAME string
 df_org_names = df_fac[['ORGANIZATIONAL_UNIT', 'SCHOOL_NAME', 'ORG_DISPLAY_NAME']].drop_duplicates().sort_values('ORGANIZATIONAL_UNIT')
 
 ########################################################
 # drop committee members who are not listed in faculty
 df_cm = df_cm.drop(df_cm[~df_cm.AdvisorDUID.isin(df_fac.DUID.unique())].index)
 
-
+# debugging code for final slimmed down df_cm
 if debug:
     print "Degree subjects:"
     print "AcadOrg"
@@ -370,7 +373,6 @@ if debug:
 
 ########################################################
 # merge the two data frames
-
 if debug and False:
     print "\nRHS df to merge"
     print df_fac[['DUID', 'ORGANIZATIONAL_UNIT']].drop_duplicates().head(100)
@@ -387,7 +389,7 @@ suffixes=('_cm', '_fac')
 # remove DUID since we already have AdvisorDUID
 del df_cm_merged['DUID']
 
-# remove advisors who are listed twice
+# remove advisors who are listed twice on the same committee
 if primary_only:
     df_cm_merged = df_cm_merged.drop_duplicates(subset=['StudentIDFixed', 'AdvisorDUID'])
 else:
@@ -400,12 +402,12 @@ if debug and False:
 
 ################################################################################################################
 ################################################################################################################
-# Create edges between ORGANIZATIONAL_UNITs from each committee
+# Create edges between ORGANIZATIONAL_UNITs / nodes from each committee
 all_edge_rows_list = []
 for student in df_cm_merged['StudentIDFixed'].unique():
     df_cm_student = df_cm_merged[(df_cm_merged.StudentIDFixed == student)]
 
-    # get the date of the committee and do final checks on it's validity
+    # get the date of the committee and do final checks on its validity
     dates = df_cm_student.Date.unique()
     if len(dates) > 1:
         print "ERROR: Multiple Date in student = %s continuing!" % (student)
@@ -428,8 +430,8 @@ for student in df_cm_merged['StudentIDFixed'].unique():
 
     # now we are happy with the validity of the committee
 
-    # save out all the edges we can make from the AdvisorDUIDs
-    # itertools.combinations does what we want, produces all combinations of 2 commitee members
+    # save out all the edge combinations we can make from the AdvisorDUIDs
+    # itertools.combinations does what we want, produces all possible combinations of 2 committee members
     edges = list(itertools.combinations(df_cm_student['ORGANIZATIONAL_UNIT'], 2))
 
     for edge in edges:
@@ -445,7 +447,7 @@ df_edges = pd.DataFrame(all_edge_rows_list)
 
 
 ########################################################
-# debugging code for cleaned df_edges
+# debugging code for df_edges
 if debug:
     print "df_edges N rows = %d" % (len(df_edges.index))
     print "df_edges columns are:"
