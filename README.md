@@ -22,8 +22,8 @@ pip install visJS2jupyter
 pip install python-louvain
 ```
 
-### Installing networkx 2.x from master
-In order to use the new [random\_state](https://github.com/networkx/networkx/blob/a8a51d4763b01c034349fbc752713f47c637a81f/networkx/drawing/layout.py#L294) parameter of `spring\_layout` you must install `networkx` from the master. Do this before installing visJS2jupyter and python-louvain.  
+### Installing networkx from master
+In order to use the new [random\_state](https://github.com/networkx/networkx/blob/a8a51d4763b01c034349fbc752713f47c637a81f/networkx/drawing/layout.py#L294) parameter of `spring_layout` you must install [`networkx`](https://github.com/networkx/networkx) from the master as it is included in version 2.0. Do this before installing visJS2jupyter and python-louvain.  
 ```bash
 cd /where/you/would/like/to/install
 git clone git@github.com:networkx/networkx.git
