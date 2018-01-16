@@ -4,13 +4,23 @@ matthew.epland@duke.edu
 
 Work for the [2018 Scholars@Duke Visualization Challenge](https://rc.duke.edu/scholars-vis-challenge-2018)  
 
-## Brief Abstract
+## Abstract
 This submission to the 2018 Scholars@Duke Visualization Challenge explored the nature of interdisciplinary research at Duke through the study of Ph.D. committee membership for the 2013-2017 academic years. By combining the committee membership data with the faculty appointments directory, connections between different academic organizations were found and used to construct an undirected, weighted graph. From this graph communities of closely connected organizations were created via the Louvain method. The majority of communities fell along the typical disciplinary divisions, with a few interesting exceptions in Neurology, and Biology - Evolutionary Anthropology. Additionally, the level of interdisciplinary activity in each organization was measured by comparing the relative weights of their external and self connections, which showed potentially lower levels interdisciplinary activity in the Physics, Psychology and Neuroscience, and Philosophy departments. Lastly, future directions and areas of improvement for the analysis were identified, along with possible solutions.  
 
 ## Documentation
 Please see the included poster and paper for further details.  
 An interactive version of the academic organizations graph for all years may also be viewed online at [http://bl.ocks.org/mepland/raw/598590f30f49b17dc76ea4ed74695252](http://bl.ocks.org/mepland/raw/598590f30f49b17dc76ea4ed74695252)  
 
+## Cloning the Repository
+ssh  
+```bash
+git clone git@github.com:mepland/vis_challenge_2018.git
+```
+
+https  
+```bash
+git clone https://github.com/mepland/vis_challenge_2018.git
+```
 ## Installing Dependencies
 It is recommended to work in a `virtualenv` to avoid clashes with other installed software. A useful extension for this purpose is [`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/). Follow the instructions in the documentation to install and initialize wrapper before continuing.  
 
