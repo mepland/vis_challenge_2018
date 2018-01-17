@@ -1,0 +1,839 @@
+[
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000900, 
+    "node_shape": "triangle", 
+    "node_size": 3229.0, 
+    "title": "<center><b>Psychiatry & Behavioral Sciences</b><br>School of Medicine<br>Neuro<br>Largest Edge: Psychology and Neuroscience, 544<br>Node Weight: 3229<br>Interdis Frac: 0.960</center>", 
+    "x": -47.913802922126415, 
+    "y": 976.179535096762
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000393, 
+    "node_shape": "square", 
+    "node_size": 2716.0, 
+    "title": "<center><b>Civil and Environmental Engineering</b><br>Pratt School of Engineering<br>Physical Sciences<br>Largest Edge: Environmental Sciences and Policy, 641<br>Node Weight: 2716<br>Interdis Frac: 0.900</center>", 
+    "x": -98.78445974404981, 
+    "y": 920.3945047946231
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000394, 
+    "node_shape": "square", 
+    "node_size": 4888.0, 
+    "title": "<center><b>Electrical and Computer Engineering</b><br>Pratt School of Engineering<br>Physical Sciences<br>Largest Edge: Computer Science, 766<br>Node Weight: 4888<br>Interdis Frac: 0.855</center>", 
+    "x": -127.4121809203324, 
+    "y": 969.0638238869132
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 51007575, 
+    "node_shape": "triangle", 
+    "node_size": 4533.0, 
+    "title": "<center><b>Regeneration Next Initiative</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 884<br>Node Weight: 4533<br>Interdis Frac: 0.960</center>", 
+    "x": -142.17914797219711, 
+    "y": 1079.1357059731488
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000396, 
+    "node_shape": "square", 
+    "node_size": 2416.0, 
+    "title": "<center><b>Mechanical Engineering and Materials Science</b><br>Pratt School of Engineering<br>Physical Sciences<br>Largest Edge: Duke University Energy Initiative, 649<br>Node Weight: 2416<br>Interdis Frac: 0.894</center>", 
+    "x": -156.27715147483423, 
+    "y": 968.4102804353192
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50691597, 
+    "node_shape": "triangleDown", 
+    "node_size": 7961.0, 
+    "title": "<center><b>Duke University Energy Initiative</b><br>Institutes & Provost's Academic Units<br>Physical Sciences<br>Largest Edge: Chemistry, 766<br>Node Weight: 7961<br>Interdis Frac: 0.938</center>", 
+    "x": -80.5034475495954, 
+    "y": 970.5513200177339
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000398, 
+    "node_shape": "square", 
+    "node_size": 6388.0, 
+    "title": "<center><b>Biomedical Engineering</b><br>Pratt School of Engineering<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 878<br>Node Weight: 6388<br>Interdis Frac: 0.913</center>", 
+    "x": -136.4021757799278, 
+    "y": 1043.0335397821145
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50000403, 
+    "node_shape": "star", 
+    "node_size": 1536.0, 
+    "title": "<center><b>Fuqua School of Business</b><br>Fuqua School of Business<br>Social Science / Health, Pro Schools<br>Largest Edge: Fuqua School of Business, 388<br>Node Weight: 1536<br>Interdis Frac: 0.747</center>", 
+    "x": 58.35960277742617, 
+    "y": 1005.4002842652152
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000925, 
+    "node_shape": "triangle", 
+    "node_size": 1691.0, 
+    "title": "<center><b>Radiology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 301<br>Node Weight: 1691<br>Interdis Frac: 0.913</center>", 
+    "x": -212.50158722458966, 
+    "y": 999.1686699366579
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000936, 
+    "node_shape": "triangle", 
+    "node_size": 2535.0, 
+    "title": "<center><b>Oncology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 752<br>Node Weight: 2535<br>Interdis Frac: 0.957</center>", 
+    "x": -226.93686634569357, 
+    "y": 1055.4670170487645
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50586670, 
+    "node_shape": "triangle", 
+    "node_size": 62.0, 
+    "title": "<center><b>Duke Center for Human Genome Variation</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Molecular Genetics and Microbiology, 16<br>Node Weight: 62<br>Interdis Frac: 1.000</center>", 
+    "x": -497.17784601586544, 
+    "y": 813.3559912862639
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000943, 
+    "node_shape": "triangle", 
+    "node_size": 241.0, 
+    "title": "<center><b>Anesthesiology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Biomedical Engineering, 27<br>Node Weight: 241<br>Interdis Frac: 0.988</center>", 
+    "x": -341.0525627155462, 
+    "y": 943.793772142122
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50970174, 
+    "node_shape": "star", 
+    "node_size": 3372.0, 
+    "title": "<center><b>Center for Child and Family Policy</b><br>Sanford School of Public Policy<br>Neuro<br>Largest Edge: Psychology and Neuroscience, 558<br>Node Weight: 3372<br>Interdis Frac: 0.966</center>", 
+    "x": -14.949253545826274, 
+    "y": 963.1828398485055
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000959, 
+    "node_shape": "triangle", 
+    "node_size": 232.0, 
+    "title": "<center><b>Obstetrics and Gynecology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Biomedical Engineering, 45<br>Node Weight: 232<br>Interdis Frac: 0.996</center>", 
+    "x": -354.8175238631502, 
+    "y": 1102.8631701585564
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000972, 
+    "node_shape": "triangle", 
+    "node_size": 1022.0, 
+    "title": "<center><b>Ophthalmology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Biomedical Engineering, 252<br>Node Weight: 1022<br>Interdis Frac: 0.966</center>", 
+    "x": -147.14405007920797, 
+    "y": 1143.9772426216853
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50981456, 
+    "node_shape": "triangleDown", 
+    "node_size": 254.0, 
+    "title": "<center><b>Center on Biobehaviorial Health Disparities Research</b><br>Institutes & Provost's Academic Units<br>Social Science / Health, Pro Schools<br>Largest Edge: Sociology, 50<br>Node Weight: 254<br>Interdis Frac: 0.996</center>", 
+    "x": 148.16909641119176, 
+    "y": 809.5598754657889
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000983, 
+    "node_shape": "triangle", 
+    "node_size": 1545.0, 
+    "title": "<center><b>Surgery</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 229<br>Node Weight: 1545<br>Interdis Frac: 0.981</center>", 
+    "x": -126.91307948636698, 
+    "y": 1109.5196171434263
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000991, 
+    "node_shape": "triangle", 
+    "node_size": 895.0, 
+    "title": "<center><b>Orthopaedics</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Biomedical Engineering, 190<br>Node Weight: 895<br>Interdis Frac: 0.981</center>", 
+    "x": -110.01645762375769, 
+    "y": 1154.3501509776206
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000480, 
+    "node_shape": "diamond", 
+    "node_size": 3725.0, 
+    "title": "<center><b>Environmental Sciences and Policy</b><br>Nicholas School of the Environment<br>Physical Sciences<br>Largest Edge: Civil and Environmental Engineering, 641<br>Node Weight: 3725<br>Interdis Frac: 0.898</center>", 
+    "x": -52.16267459376847, 
+    "y": 931.5812950513139
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000485, 
+    "node_shape": "diamond", 
+    "node_size": 750.0, 
+    "title": "<center><b>Earth and Ocean Sciences</b><br>Nicholas School of the Environment<br>Physical Sciences<br>Largest Edge: Civil and Environmental Engineering, 174<br>Node Weight: 750<br>Interdis Frac: 0.909</center>", 
+    "x": -111.40313017849991, 
+    "y": 819.5446318239148
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000486, 
+    "node_shape": "diamond", 
+    "node_size": 775.0, 
+    "title": "<center><b>Marine Science and Conservation</b><br>Nicholas School of the Environment<br>Physical Sciences<br>Largest Edge: Environmental Sciences and Policy, 127<br>Node Weight: 775<br>Interdis Frac: 0.932</center>", 
+    "x": -62.33363596980681, 
+    "y": 843.7753751478747
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000493, 
+    "node_shape": "dot", 
+    "node_size": 452.0, 
+    "title": "<center><b>Art, Art History & Visual Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Art, Art History & Visual Studies, 79<br>Node Weight: 452<br>Interdis Frac: 0.825</center>", 
+    "x": 446.7622756943375, 
+    "y": 963.9822572846857
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000494, 
+    "node_shape": "dot", 
+    "node_size": 28.0, 
+    "title": "<center><b>Asian and Middle Eastern Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Cultural Anthropology, 9<br>Node Weight: 28<br>Interdis Frac: 1.000</center>", 
+    "x": 754.8706038222182, 
+    "y": 1265.5418434289022
+  }, 
+  {
+    "color": "rgba(140, 86, 75, 1.0)", 
+    "id": 50000495, 
+    "node_shape": "dot", 
+    "node_size": 883.0, 
+    "title": "<center><b>Evolutionary Anthropology</b><br>Trinity College of Arts & Sciences<br>Bio / Evolution<br>Largest Edge: Biology, 153<br>Node Weight: 883<br>Interdis Frac: 0.857</center>", 
+    "x": -65.8003192920932, 
+    "y": 890.8948825465211
+  }, 
+  {
+    "color": "rgba(140, 86, 75, 1.0)", 
+    "id": 50000496, 
+    "node_shape": "dot", 
+    "node_size": 3492.0, 
+    "title": "<center><b>Biology</b><br>Trinity College of Arts & Sciences<br>Bio / Evolution<br>Largest Edge: Biology, 472<br>Node Weight: 3492<br>Interdis Frac: 0.865</center>", 
+    "x": -106.36606069784575, 
+    "y": 1013.4674806002702
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000498, 
+    "node_shape": "dot", 
+    "node_size": 4783.0, 
+    "title": "<center><b>Chemistry</b><br>Trinity College of Arts & Sciences<br>Physical Sciences<br>Largest Edge: Duke Cancer Institute, 900<br>Node Weight: 4783<br>Interdis Frac: 0.898</center>", 
+    "x": -150.96648985086466, 
+    "y": 999.7767837630714
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000499, 
+    "node_shape": "dot", 
+    "node_size": 128.0, 
+    "title": "<center><b>Classical Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Classical Studies, 41<br>Node Weight: 128<br>Interdis Frac: 0.680</center>", 
+    "x": 564.0501639418045, 
+    "y": 969.2665167953792
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000500, 
+    "node_shape": "dot", 
+    "node_size": 2946.0, 
+    "title": "<center><b>Computer Science</b><br>Trinity College of Arts & Sciences<br>Physical Sciences<br>Largest Edge: Electrical and Computer Engineering, 766<br>Node Weight: 2946<br>Interdis Frac: 0.904</center>", 
+    "x": -133.265195107212, 
+    "y": 941.2485377348687
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000503, 
+    "node_shape": "dot", 
+    "node_size": 630.0, 
+    "title": "<center><b>Cultural Anthropology</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Cultural Anthropology, 94<br>Node Weight: 630<br>Interdis Frac: 0.851</center>", 
+    "x": 338.0380447602122, 
+    "y": 1083.852819089145
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50000504, 
+    "node_shape": "dot", 
+    "node_size": 3444.0, 
+    "title": "<center><b>Economics</b><br>Trinity College of Arts & Sciences<br>Social Science / Health, Pro Schools<br>Largest Edge: Duke Population Research Center, 713<br>Node Weight: 3444<br>Interdis Frac: 0.853</center>", 
+    "x": 40.94068454206667, 
+    "y": 940.2587035540241
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50437754, 
+    "node_shape": "triangleDown", 
+    "node_size": 287.0, 
+    "title": "<center><b>Social Science Research Institute</b><br>Institutes & Provost's Academic Units<br>Social Science / Health, Pro Schools<br>Largest Edge: Sociology, 36<br>Node Weight: 287<br>Interdis Frac: 1.000</center>", 
+    "x": -71.54679333592598, 
+    "y": 770.3187831015665
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000508, 
+    "node_shape": "dot", 
+    "node_size": 210.0, 
+    "title": "<center><b>Germanic Languages</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: History, 39<br>Node Weight: 210<br>Interdis Frac: 0.971</center>", 
+    "x": 442.64378523375774, 
+    "y": 1033.1112971964185
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000509, 
+    "node_shape": "dot", 
+    "node_size": 873.0, 
+    "title": "<center><b>History</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: History, 181<br>Node Weight: 873<br>Interdis Frac: 0.793</center>", 
+    "x": 239.75943010809598, 
+    "y": 996.8897559181272
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50001023, 
+    "node_shape": "triangle", 
+    "node_size": 18434.0, 
+    "title": "<center><b>Duke Cancer Institute</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Pharmacology & Cancer Biology, 1868<br>Node Weight: 18434<br>Interdis Frac: 0.906</center>", 
+    "x": -161.09865547490227, 
+    "y": 1041.4128772834479
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000512, 
+    "node_shape": "dot", 
+    "node_size": 1895.0, 
+    "title": "<center><b>Mathematics</b><br>Trinity College of Arts & Sciences<br>Physical Sciences<br>Largest Edge: Electrical and Computer Engineering, 261<br>Node Weight: 1895<br>Interdis Frac: 0.871</center>", 
+    "x": -177.48340261900051, 
+    "y": 909.6937369731293
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000515, 
+    "node_shape": "dot", 
+    "node_size": 274.0, 
+    "title": "<center><b>Music</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Music, 94<br>Node Weight: 274<br>Interdis Frac: 0.657</center>", 
+    "x": 473.88492077330926, 
+    "y": 1151.871625411773
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000516, 
+    "node_shape": "dot", 
+    "node_size": 823.0, 
+    "title": "<center><b>Philosophy</b><br>Trinity College of Arts & Sciences<br>Neuro<br>Largest Edge: Duke Science & Society, 187<br>Node Weight: 823<br>Interdis Frac: 0.885</center>", 
+    "x": 109.5545499712435, 
+    "y": 1050.4577734482166
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50001029, 
+    "node_shape": "triangle", 
+    "node_size": 593.0, 
+    "title": "<center><b>Duke Clinical Research Institute</b><br>School of Medicine<br>Physical Sciences<br>Largest Edge: Electrical and Computer Engineering, 88<br>Node Weight: 593<br>Interdis Frac: 0.992</center>", 
+    "x": -219.95062412071815, 
+    "y": 875.1999220725438
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50000522, 
+    "node_shape": "dot", 
+    "node_size": 1001.0, 
+    "title": "<center><b>Political Science</b><br>Trinity College of Arts & Sciences<br>Social Science / Health, Pro Schools<br>Largest Edge: Political Science, 275<br>Node Weight: 1001<br>Interdis Frac: 0.725</center>", 
+    "x": 145.22751818257169, 
+    "y": 922.1993946280244
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000523, 
+    "node_shape": "dot", 
+    "node_size": 5656.0, 
+    "title": "<center><b>Psychology and Neuroscience</b><br>Trinity College of Arts & Sciences<br>Neuro<br>Largest Edge: Duke Institute for Brain Sciences, 861<br>Node Weight: 5656<br>Interdis Frac: 0.916</center>", 
+    "x": -17.465548006985493, 
+    "y": 984.504659625687
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000528, 
+    "node_shape": "dot", 
+    "node_size": 413.0, 
+    "title": "<center><b>Religious Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Divinity School, 105<br>Node Weight: 413<br>Interdis Frac: 0.910</center>", 
+    "x": 388.7413259984852, 
+    "y": 924.7545454153675
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000529, 
+    "node_shape": "dot", 
+    "node_size": 883.0, 
+    "title": "<center><b>Romance Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Literature, 255<br>Node Weight: 883<br>Interdis Frac: 0.852</center>", 
+    "x": 300.41464131468445, 
+    "y": 1049.4304312258782
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000530, 
+    "node_shape": "dot", 
+    "node_size": 147.0, 
+    "title": "<center><b>Slavic and Eurasian Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: History, 20<br>Node Weight: 147<br>Interdis Frac: 0.986</center>", 
+    "x": 286.6336370387107, 
+    "y": 1143.1714626777537
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000531, 
+    "node_shape": "dot", 
+    "node_size": 124.0, 
+    "title": "<center><b>Theater Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Art, Art History & Visual Studies, 30<br>Node Weight: 124<br>Interdis Frac: 0.992</center>", 
+    "x": 603.843812344829, 
+    "y": 932.7740418575751
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50000532, 
+    "node_shape": "dot", 
+    "node_size": 1635.0, 
+    "title": "<center><b>Sociology</b><br>Trinity College of Arts & Sciences<br>Social Science / Health, Pro Schools<br>Largest Edge: Duke Population Research Center, 284<br>Node Weight: 1635<br>Interdis Frac: 0.873</center>", 
+    "x": 90.59921221282204, 
+    "y": 911.8771243770819
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000540, 
+    "node_shape": "dot", 
+    "node_size": 13.0, 
+    "title": "<center><b>Dance</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Music, 3<br>Node Weight: 13<br>Interdis Frac: 1.000</center>", 
+    "x": 1000.0, 
+    "y": 1121.6324933354101
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000545, 
+    "node_shape": "dot", 
+    "node_size": 67.0, 
+    "title": "<center><b>Education</b><br>Trinity College of Arts & Sciences<br>Physical Sciences<br>Largest Edge: Physics, 43<br>Node Weight: 67<br>Interdis Frac: 1.000</center>", 
+    "x": -519.1934192136015, 
+    "y": 863.7426643342134
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50001058, 
+    "node_shape": "triangle", 
+    "node_size": 1931.0, 
+    "title": "<center><b>Duke-UNC Center for Brain Imaging and Analysis</b><br>School of Medicine<br>Neuro<br>Largest Edge: Psychology and Neuroscience, 383<br>Node Weight: 1931<br>Interdis Frac: 0.970</center>", 
+    "x": -4.538784342047995, 
+    "y": 1056.9580029331066
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000554, 
+    "node_shape": "dot", 
+    "node_size": 783.0, 
+    "title": "<center><b>Literature</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Romance Studies, 255<br>Node Weight: 783<br>Interdis Frac: 0.877</center>", 
+    "x": 355.00417668015746, 
+    "y": 1030.876113619918
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000562, 
+    "node_shape": "dot", 
+    "node_size": 114.0, 
+    "title": "<center><b>Gender, Sexuality & Feminist Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: Cultural Anthropology, 40<br>Node Weight: 114<br>Interdis Frac: 1.000</center>", 
+    "x": 514.8914959996649, 
+    "y": 1095.144809331876
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50001015, 
+    "node_shape": "triangle", 
+    "node_size": 441.0, 
+    "title": "<center><b>Center for the Study of Aging and Human Development</b><br>School of Medicine<br>Social Science / Health, Pro Schools<br>Largest Edge: Sociology, 116<br>Node Weight: 441<br>Interdis Frac: 0.980</center>", 
+    "x": 79.97986006381696, 
+    "y": 807.3824505660879
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000595, 
+    "node_shape": "dot", 
+    "node_size": 128.0, 
+    "title": "<center><b>Linguistics</b><br>Trinity College of Arts & Sciences<br>Neuro<br>Largest Edge: Philosophy, 36<br>Node Weight: 128<br>Interdis Frac: 0.992</center>", 
+    "x": 194.31748820193232, 
+    "y": 1244.2314431763275
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000506, 
+    "node_shape": "dot", 
+    "node_size": 643.0, 
+    "title": "<center><b>English</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: English, 135<br>Node Weight: 643<br>Interdis Frac: 0.790</center>", 
+    "x": 285.7255502660703, 
+    "y": 1002.8099719466885
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 51031164, 
+    "node_shape": "triangle", 
+    "node_size": 66.0, 
+    "title": "<center><b>Population Health Sciences</b><br>School of Medicine<br>Neuro<br>Largest Edge: Psychology and Neuroscience, 13<br>Node Weight: 66<br>Interdis Frac: 1.000</center>", 
+    "x": -110.45168687828826, 
+    "y": 601.7193506556198
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000345, 
+    "node_shape": "triangleDown", 
+    "node_size": 16.0, 
+    "title": "<center><b>Asian Pacific Studies Institute</b><br>Institutes & Provost's Academic Units<br>Liberal Arts<br>Largest Edge: Art, Art History & Visual Studies, 10<br>Node Weight: 16<br>Interdis Frac: 1.000</center>", 
+    "x": 970.8667484214975, 
+    "y": 851.000040440914
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50545114, 
+    "node_shape": "triangleDown", 
+    "node_size": 9998.0, 
+    "title": "<center><b>Duke Institute for Brain Sciences</b><br>Institutes & Provost's Academic Units<br>Neuro<br>Largest Edge: Neurobiology, 983<br>Node Weight: 9998<br>Interdis Frac: 0.944</center>", 
+    "x": -78.15142571656546, 
+    "y": 1011.4513069127049
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000517, 
+    "node_shape": "dot", 
+    "node_size": 3236.0, 
+    "title": "<center><b>Physics</b><br>Trinity College of Arts & Sciences<br>Physical Sciences<br>Largest Edge: Physics, 672<br>Node Weight: 3236<br>Interdis Frac: 0.792</center>", 
+    "x": -188.67076310667437, 
+    "y": 956.2859203726438
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50623303, 
+    "node_shape": "triangleDown", 
+    "node_size": 1863.0, 
+    "title": "<center><b>Center for Population Health & Aging</b><br>Institutes & Provost's Academic Units<br>Social Science / Health, Pro Schools<br>Largest Edge: Duke Population Research Center, 228<br>Node Weight: 1863<br>Interdis Frac: 0.986</center>", 
+    "x": 15.662867094386163, 
+    "y": 916.7112159294801
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50623306, 
+    "node_shape": "triangleDown", 
+    "node_size": 3874.0, 
+    "title": "<center><b>Duke Population Research Center</b><br>Institutes & Provost's Academic Units<br>Social Science / Health, Pro Schools<br>Largest Edge: Economics, 713<br>Node Weight: 3874<br>Interdis Frac: 0.945</center>", 
+    "x": 20.510705665577767, 
+    "y": 946.9615770433717
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50413712, 
+    "node_shape": "dot", 
+    "node_size": 476.0, 
+    "title": "<center><b>African and African American Studies</b><br>Trinity College of Arts & Sciences<br>Liberal Arts<br>Largest Edge: History, 76<br>Node Weight: 476<br>Interdis Frac: 0.979</center>", 
+    "x": 307.33737575804054, 
+    "y": 967.8607840901484
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50413713, 
+    "node_shape": "dot", 
+    "node_size": 1793.0, 
+    "title": "<center><b>Statistical Science</b><br>Trinity College of Arts & Sciences<br>Physical Sciences<br>Largest Edge: Statistical Science, 189<br>Node Weight: 1793<br>Interdis Frac: 0.895</center>", 
+    "x": -129.47099667042565, 
+    "y": 899.0883036615102
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50327916, 
+    "node_shape": "triangleDown", 
+    "node_size": 3196.0, 
+    "title": "<center><b>Global Health Institute</b><br>Institutes & Provost's Academic Units<br>Social Science / Health, Pro Schools<br>Largest Edge: Duke Cancer Institute, 262<br>Node Weight: 3196<br>Interdis Frac: 0.980</center>", 
+    "x": -46.33921221247123, 
+    "y": 1008.9733029604968
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50000758, 
+    "node_shape": "star", 
+    "node_size": 1004.0, 
+    "title": "<center><b>School of Nursing</b><br>School of Nursing<br>Social Science / Health, Pro Schools<br>Largest Edge: School of Nursing, 88<br>Node Weight: 1004<br>Interdis Frac: 0.912</center>", 
+    "x": -36.74821008807813, 
+    "y": 903.1411007531617
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000803, 
+    "node_shape": "triangle", 
+    "node_size": 4343.0, 
+    "title": "<center><b>Cell Biology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 895<br>Node Weight: 4343<br>Interdis Frac: 0.947</center>", 
+    "x": -159.1627610450281, 
+    "y": 1088.5964036029422
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000807, 
+    "node_shape": "triangle", 
+    "node_size": 4254.0, 
+    "title": "<center><b>Biochemistry</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 1143<br>Node Weight: 4254<br>Interdis Frac: 0.906</center>", 
+    "x": -196.39891660775854, 
+    "y": 1028.1760054425952
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000808, 
+    "node_shape": "triangle", 
+    "node_size": 3428.0, 
+    "title": "<center><b>Immunology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 984<br>Node Weight: 3428<br>Interdis Frac: 0.920</center>", 
+    "x": -217.27662801746712, 
+    "y": 1081.7943644227803
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000810, 
+    "node_shape": "triangle", 
+    "node_size": 4755.0, 
+    "title": "<center><b>Neurobiology</b><br>School of Medicine<br>Neuro<br>Largest Edge: Duke Institute for Brain Sciences, 983<br>Node Weight: 4755<br>Interdis Frac: 0.946</center>", 
+    "x": -89.45986171876591, 
+    "y": 1040.5256628358259
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000811, 
+    "node_shape": "triangle", 
+    "node_size": 2786.0, 
+    "title": "<center><b>Pathology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 681<br>Node Weight: 2786<br>Interdis Frac: 0.954</center>", 
+    "x": -205.42424285551857, 
+    "y": 1104.6821562795212
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50893743, 
+    "node_shape": "triangle", 
+    "node_size": 620.0, 
+    "title": "<center><b>Neurology</b><br>School of Medicine<br>Neuro<br>Largest Edge: Duke Institute for Brain Sciences, 108<br>Node Weight: 620<br>Interdis Frac: 0.995</center>", 
+    "x": -246.12497706774855, 
+    "y": 974.0997466009209
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000817, 
+    "node_shape": "triangle", 
+    "node_size": 6385.0, 
+    "title": "<center><b>Pharmacology & Cancer Biology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 1868<br>Node Weight: 6385<br>Interdis Frac: 0.924</center>", 
+    "x": -172.60034956126418, 
+    "y": 1060.4702899046442
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000820, 
+    "node_shape": "triangle", 
+    "node_size": 6594.0, 
+    "title": "<center><b>Molecular Genetics and Microbiology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 1550<br>Node Weight: 6594<br>Interdis Frac: 0.925</center>", 
+    "x": -195.14173381670648, 
+    "y": 1049.7385033905305
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000830, 
+    "node_shape": "triangle", 
+    "node_size": 793.0, 
+    "title": "<center><b>Biostatistics & Bioinformatics</b><br>School of Medicine<br>Physical Sciences<br>Largest Edge: Molecular Genetics and Microbiology, 101<br>Node Weight: 793<br>Interdis Frac: 0.977</center>", 
+    "x": -245.59294492794794, 
+    "y": 930.9382202793884
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50000832, 
+    "node_shape": "triangle", 
+    "node_size": 106.0, 
+    "title": "<center><b>Community and Family Medicine</b><br>School of Medicine<br>Social Science / Health, Pro Schools<br>Largest Edge: School of Nursing, 24<br>Node Weight: 106<br>Interdis Frac: 1.000</center>", 
+    "x": -16.446134462150475, 
+    "y": 672.9106145572706
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50000471, 
+    "node_shape": "star", 
+    "node_size": 114.0, 
+    "title": "<center><b>Duke Law School</b><br>Duke Law School<br>Social Science / Health, Pro Schools<br>Largest Edge: Political Science, 41<br>Node Weight: 114<br>Interdis Frac: 0.982</center>", 
+    "x": 269.46826129136525, 
+    "y": 748.0446158146354
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000847, 
+    "node_shape": "triangle", 
+    "node_size": 1350.0, 
+    "title": "<center><b>Cardiology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 266<br>Node Weight: 1350<br>Interdis Frac: 0.981</center>", 
+    "x": -177.60013178108676, 
+    "y": 1130.5629060524327
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000849, 
+    "node_shape": "triangle", 
+    "node_size": 276.0, 
+    "title": "<center><b>Dermatology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Cell Biology, 61<br>Node Weight: 276<br>Interdis Frac: 1.000</center>", 
+    "x": -191.707852940369, 
+    "y": 1264.0729468331917
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000850, 
+    "node_shape": "triangle", 
+    "node_size": 1189.0, 
+    "title": "<center><b>Endocrinology, Metabolism, and Nutrition</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 326<br>Node Weight: 1189<br>Interdis Frac: 0.970</center>", 
+    "x": -259.445320308902, 
+    "y": 1085.4173732441095
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50000852, 
+    "node_shape": "triangle", 
+    "node_size": 32.0, 
+    "title": "<center><b>General Internal Medicine</b><br>School of Medicine<br>Social Science / Health, Pro Schools<br>Largest Edge: Duke Science & Society, 5<br>Node Weight: 32<br>Interdis Frac: 1.000</center>", 
+    "x": 190.3873795597761, 
+    "y": 1440.8339012277809
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000853, 
+    "node_shape": "triangle", 
+    "node_size": 127.0, 
+    "title": "<center><b>Gastroenterology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 32<br>Node Weight: 127<br>Interdis Frac: 1.000</center>", 
+    "x": -327.9815456877397, 
+    "y": 1285.7064647647587
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000855, 
+    "node_shape": "triangle", 
+    "node_size": 136.0, 
+    "title": "<center><b>Geriatrics</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Molecular Genetics and Microbiology, 36<br>Node Weight: 136<br>Interdis Frac: 1.000</center>", 
+    "x": -431.7061276697746, 
+    "y": 1030.2039400817068
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000857, 
+    "node_shape": "triangle", 
+    "node_size": 611.0, 
+    "title": "<center><b>Hematology</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 138<br>Node Weight: 611<br>Interdis Frac: 0.989</center>", 
+    "x": -225.1194950406358, 
+    "y": 1170.0733250871465
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000858, 
+    "node_shape": "triangle", 
+    "node_size": 394.0, 
+    "title": "<center><b>Infectious Diseases</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Molecular Genetics and Microbiology, 113<br>Node Weight: 394<br>Interdis Frac: 0.980</center>", 
+    "x": -314.74088027651464, 
+    "y": 1164.0883862931867
+  }, 
+  {
+    "color": "rgba(44, 160, 44, 1.0)", 
+    "id": 50000347, 
+    "node_shape": "triangleDown", 
+    "node_size": 69.0, 
+    "title": "<center><b>Center for Latin American and Caribbean Studies</b><br>Institutes & Provost's Academic Units<br>Physical Sciences<br>Largest Edge: Environmental Sciences and Policy, 16<br>Node Weight: 69<br>Interdis Frac: 1.000</center>", 
+    "x": 108.18586939816805, 
+    "y": 611.7128465955617
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000861, 
+    "node_shape": "triangle", 
+    "node_size": 229.0, 
+    "title": "<center><b>Nephrology</b><br>School of Medicine<br>Neuro<br>Largest Edge: Psychology and Neuroscience, 26<br>Node Weight: 229<br>Interdis Frac: 1.000</center>", 
+    "x": -218.6442117826425, 
+    "y": 809.3395226454187
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000863, 
+    "node_shape": "triangle", 
+    "node_size": 695.0, 
+    "title": "<center><b>Duke Molecular Physiology Institute</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Molecular Genetics and Microbiology, 90<br>Node Weight: 695<br>Interdis Frac: 0.971</center>", 
+    "x": -280.3577084409678, 
+    "y": 1013.5197679161643
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000865, 
+    "node_shape": "triangle", 
+    "node_size": 113.0, 
+    "title": "<center><b>Pulmonary, Allergy, and Critical Care Medicine</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Pathology, 19<br>Node Weight: 113<br>Interdis Frac: 0.991</center>", 
+    "x": -433.6260313979512, 
+    "y": 1242.9183778599092
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000354, 
+    "node_shape": "triangleDown", 
+    "node_size": 6057.0, 
+    "title": "<center><b>Duke Science & Society</b><br>Institutes & Provost's Academic Units<br>Neuro<br>Largest Edge: Duke Institute for Brain Sciences, 469<br>Node Weight: 6057<br>Interdis Frac: 0.979</center>", 
+    "x": -0.4297298216713306, 
+    "y": 1009.0930667917656
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000867, 
+    "node_shape": "triangle", 
+    "node_size": 1013.0, 
+    "title": "<center><b>Human Vaccine Institute</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 225<br>Node Weight: 1013<br>Interdis Frac: 0.975</center>", 
+    "x": -269.9720502755295, 
+    "y": 1128.8991497155293
+  }, 
+  {
+    "color": "rgba(31, 119, 180, 1.0)", 
+    "id": 50000870, 
+    "node_shape": "triangle", 
+    "node_size": 1549.0, 
+    "title": "<center><b>Pediatrics</b><br>School of Medicine<br>\"School of Medicine\"<br>Largest Edge: Duke Cancer Institute, 269<br>Node Weight: 1549<br>Interdis Frac: 0.985</center>", 
+    "x": -109.09193941406161, 
+    "y": 1076.571439691712
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000373, 
+    "node_shape": "triangleDown", 
+    "node_size": 152.0, 
+    "title": "<center><b>Kenan Institute for Ethics</b><br>Institutes & Provost's Academic Units<br>Neuro<br>Largest Edge: Philosophy, 27<br>Node Weight: 152<br>Interdis Frac: 1.000</center>", 
+    "x": 148.46153904481608, 
+    "y": 1176.0200889209132
+  }, 
+  {
+    "color": "rgba(256, 127, 14, 1.0)", 
+    "id": 50000378, 
+    "node_shape": "triangleDown", 
+    "node_size": 2503.0, 
+    "title": "<center><b>Center for Cognitive Neuroscience</b><br>Institutes & Provost's Academic Units<br>Neuro<br>Largest Edge: Duke Institute for Brain Sciences, 483<br>Node Weight: 2503<br>Interdis Frac: 0.955</center>", 
+    "x": -23.04908996127062, 
+    "y": 1036.774695148565
+  }, 
+  {
+    "color": "rgba(148, 103, 189, 1.0)", 
+    "id": 50000379, 
+    "node_shape": "star", 
+    "node_size": 461.0, 
+    "title": "<center><b>Divinity School</b><br>Divinity School<br>Liberal Arts<br>Largest Edge: Religious Studies, 105<br>Node Weight: 461<br>Interdis Frac: 0.803</center>", 
+    "x": 306.97064487938184, 
+    "y": 913.8896835636801
+  }, 
+  {
+    "color": "rgba(214, 39, 40, 1.0)", 
+    "id": 50500091, 
+    "node_shape": "star", 
+    "node_size": 2920.0, 
+    "title": "<center><b>Sanford School of Public Policy</b><br>Sanford School of Public Policy<br>Social Science / Health, Pro Schools<br>Largest Edge: Economics, 411<br>Node Weight: 2920<br>Interdis Frac: 0.942</center>", 
+    "x": 71.22601816591026, 
+    "y": 956.0887834579557
+  }
+]
